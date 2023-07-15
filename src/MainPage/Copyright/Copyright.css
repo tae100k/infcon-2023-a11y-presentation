@@ -1,0 +1,20 @@
+.section {
+  padding: 32px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  display: inline-flex;
+  border-top: none;
+  border-bottom: 1px solid black;
+}
+
+.label {
+  text-align: center;
+  color: black;
+  font-size: 16px;
+  font-family: Pretendard;
+  font-weight: 900;
+  text-transform: uppercase;
+  word-wrap: break-word;
+}

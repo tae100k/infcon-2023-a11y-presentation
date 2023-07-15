@@ -1,22 +1,16 @@
-import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
+import {Carousel} from "./shared/Carousel/Carousel";
+import {Copyright} from "./MainPage/Copyright/Copyright";
+import {Header} from "./MainPage/Header/Header";
+import {Cards} from "shared/Cards/Cards";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>INFCON 2023 Rarible Renewal</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="layout">
+      <Header />
+      <Carousel />
+      <Cards />
+      <Copyright />
     </div>
   );
 }
