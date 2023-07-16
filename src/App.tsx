@@ -1,11 +1,9 @@
-import "./App.css";
-import {Carousel} from "./shared/Carousel/Carousel";
-import {Header} from "./MainPage/Header/Header";
+import {ThemeProvider} from "@emotion/react";
+import {purple} from "@mui/material/colors";
+import {createTheme} from "@mui/system";
 import {Cards} from "shared/Cards/Cards";
 import {Copyright} from "shared/Copyright/Copyright";
-import {ThemeProvider} from "@emotion/react";
-import {createTheme} from "@mui/system";
-import {Container} from "@mui/material";
+import "./App.css";
 
 const theme = createTheme({
   typography: {
@@ -30,7 +28,7 @@ function App() {
     <ThemeProvider theme={theme}>
       {/* <Header /> */}
       {/* <Carousel /> */}
-      {/* <Cards /> */}
+      <Cards />
       <Copyright />
     </ThemeProvider>
   );
