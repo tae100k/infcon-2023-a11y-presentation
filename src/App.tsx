@@ -1,23 +1,38 @@
-import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
+import {Carousel} from "./shared/Carousel/Carousel";
+import {Header} from "./MainPage/Header/Header";
+import {Cards} from "shared/Cards/Cards";
+import {Copyright} from "shared/Copyright/Copyright";
+import {ThemeProvider} from "@emotion/react";
+import {createTheme} from "@mui/system";
+import {Container} from "@mui/material";
+
+const theme = createTheme({
+  typography: {
+    fontFamily: [
+      "Pretendard",
+      "-apple-system",
+      "BlinkMacSystemFont",
+      '"Segoe UI"',
+      "Roboto",
+      '"Helvetica Neue"',
+      "Arial",
+      "sans-serif",
+      '"Apple Color Emoji"',
+      '"Segoe UI Emoji"',
+      '"Segoe UI Symbol"',
+    ].join(","),
+  },
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>INFCON 2023 Rarible Renewal</p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+      {/* <Header /> */}
+      {/* <Carousel /> */}
+      {/* <Cards /> */}
+      <Copyright />
+    </ThemeProvider>
   );
 }
 
