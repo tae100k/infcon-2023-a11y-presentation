@@ -1,36 +1,16 @@
-import {ThemeProvider} from "@emotion/react";
-import {purple} from "@mui/material/colors";
-import {createTheme} from "@mui/system";
+import {Box} from "@mui/material";
 import {Cards} from "shared/Cards/Cards";
 import {Copyright} from "shared/Copyright/Copyright";
 import "./App.css";
 
-const theme = createTheme({
-  typography: {
-    fontFamily: [
-      "Pretendard",
-      "-apple-system",
-      "BlinkMacSystemFont",
-      '"Segoe UI"',
-      "Roboto",
-      '"Helvetica Neue"',
-      "Arial",
-      "sans-serif",
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(","),
-  },
-});
-
 function App() {
   return (
-    <ThemeProvider theme={theme}>
+    <Box bgcolor={"#e7e2df"} pt={"32px"} pb={"64px"} height={"100%"}>
       {/* <Header /> */}
       {/* <Carousel /> */}
       <Cards />
       <Copyright />
-    </ThemeProvider>
+    </Box>
   );
 }
 

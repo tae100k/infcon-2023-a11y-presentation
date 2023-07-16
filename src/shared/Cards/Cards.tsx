@@ -43,9 +43,40 @@ const Cards = () => {
                 >
                   {card.title}
                 </Typography>
-                <Box display="flex">
+                <Box display="flex" justifyContent={"space-between"}>
                   {card.icon}
-                  Go to Page
+                  <Button
+                    variant="outlined"
+                    sx={{
+                      p: "8px 12px",
+                      borderRadius: "9999px",
+                      alignSelf: "flex-end",
+                      height: "fit-content",
+                      color: "black",
+                      borderColor: "black",
+                      gap: "4px",
+                      textAlign: "center",
+                      fontStyle: "normal",
+                      fontWeight: 700,
+                      fontSize: {
+                        xs: "12px",
+                        sm: "13px",
+                      },
+                    }}
+                  >
+                    Go to Page
+                    <ArrowTopRightIcon
+                      sx={{
+                        fontSize: {
+                          xs: "14px",
+                          sm: "16px",
+                          md: "18px",
+                          lg: "20px",
+                          xl: "20px",
+                        },
+                      }}
+                    />
+                  </Button>
                 </Box>
               </Box>
             </Grid>
@@ -60,7 +91,7 @@ export {Cards};
 
 const commonIconProps = {
   width: {
-    xs: "56px",
+    xs: "80px",
     sm: "111px",
     md: "90px",
     lg: "111px",
