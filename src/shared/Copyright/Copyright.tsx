@@ -4,8 +4,8 @@ import "./Copyright.css";
 const Copyright = () => {
   return (
     <Box
-      borderTop={"1px solid black"}
-      borderBottom={"1px solid black"}
+      borderTop={"2px solid black"}
+      borderBottom={"2px solid black"}
       py={"32px"}
       display="flex"
       justifyContent="center"
