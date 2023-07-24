@@ -1,4 +1,5 @@
 import {Box, Typography} from "@mui/material";
+import SelfRotatingSlider from "./CarouselsList";
 
 const Carousels = () => {
   return (
@@ -14,7 +15,6 @@ const Carousels = () => {
         flexDirection: "column",
         alignItems: "flex-start",
         gap: "64px",
-        alignSelf: "stretch",
       }}
     >
       <Box
@@ -65,6 +65,7 @@ const Carousels = () => {
           }
         </Typography>
       </Box>
+      <SelfRotatingSlider />
     </Box>
   );
 };
