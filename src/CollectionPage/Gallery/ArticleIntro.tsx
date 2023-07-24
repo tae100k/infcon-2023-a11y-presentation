@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import {Box, Typography} from "@mui/material";
 
 export const ArticleIntro = () => {
   return (
@@ -63,7 +63,6 @@ export const ArticleIntro = () => {
         <Typography
           sx={{
             color: "#7B7B7B",
-            fontFamily: "Pretendard, 'sans-serif'",
             fontStyle: "normal",
             fontWeight: 400,
             lineHeight: "150%", // 18px
