@@ -24,6 +24,11 @@ const Cards = () => {
                 flexDirection={"column"}
                 sx={{
                   aspectRatio: 1 / 1,
+                  backgroundColor: "inherit",
+                  transition: "background-color 0.3s",
+                  ":hover": {
+                    backgroundColor: "red",
+                  },
                 }}
               >
                 <Typography
