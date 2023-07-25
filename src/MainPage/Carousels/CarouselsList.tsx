@@ -49,7 +49,7 @@ const SelfRotatingSlider = () => {
     const scale = getScaleValue(index);
     return {
       width: 400 * scale + "px",
-      height: 500 * scale + "px",
+      height: 450 * scale + "px",
     };
   };
 
@@ -78,7 +78,13 @@ const SelfRotatingSlider = () => {
       </IconButton>
       <Box sx={{width: "100%", display: "flex", justifyContent: "center"}}>
         <Box
-          sx={{overflow: "hidden", justifyContent: "center", display: "flex"}}
+          sx={{
+            overflow: "hidden",
+            justifyContent: "center",
+            display: "flex",
+            position: "relative",
+            height: "fit-content",
+          }}
         >
           <Grid
             container
@@ -101,8 +107,7 @@ const SelfRotatingSlider = () => {
                   border: "1px solid #000",
                   background: `lightgray 50% / cover no-repeat`,
                   transform: `scale(${getScaleValue(index)})`,
-                  transition:
-                    "transform 0.5s cubic-bezier(0.5, 0, 0.25, 1), zIndex 0.5s",
+                  transition: "transform 0.5s  zIndex 0.5s",
                   zIndex: getScaleValue(index) === 1 ? 1 : 0,
                 }}
               >
