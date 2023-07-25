@@ -1,4 +1,5 @@
 import {Box, Button, Typography} from "@mui/material";
+import {Link as RouterLink} from "react-router-dom";
 
 const Header = () => {
   return (
@@ -32,6 +33,8 @@ const Header = () => {
         TREND 2023
       </Typography>
       <Button
+        component={RouterLink}
+        to="/subscribe"
         variant="contained"
         sx={{
           display: "flex",
