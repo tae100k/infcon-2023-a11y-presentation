@@ -1,4 +1,5 @@
 import {FourIcon, SatelliteIcon, TornadoIcon} from "icons/icon";
+import {CardItemDataType} from "typedef/card";
 
 const commonIconProps = {
   width: {
@@ -20,7 +21,7 @@ const commonIconProps = {
   transition: "opacity 0.3s",
 };
 
-export const cardData = [
+export const cardData: CardItemDataType[] = [
   {
     title: `From\n다카르,\nTo\n도쿄`,
     icon: <TornadoIcon className={"icon"} sx={commonIconProps} />,
