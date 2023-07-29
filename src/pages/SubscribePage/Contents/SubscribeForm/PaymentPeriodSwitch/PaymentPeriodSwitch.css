@@ -1,0 +1,35 @@
+.toggle-switch {
+  width: fit-content;
+  display: flex;
+  padding: 2px 4px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 9999px;
+  border: 1px solid black;
+  background: transparent;
+  align-self: center;
+}
+
+.toggle-switch input[type="radio"] {
+  display: none;
+}
+
+.option {
+  display: flex;
+  padding: 12px 16px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  border-radius: 9999px;
+  opacity: 0.4;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 700;
+}
+
+.selected {
+  opacity: 1;
+  border: 1px solid black;
+  background: black;
+  color: #fff;
+}

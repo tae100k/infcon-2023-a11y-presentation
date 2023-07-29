@@ -1,6 +1,6 @@
 import {Box} from "@mui/material";
 import {Copyright} from "shared/Copyright/Copyright";
-import {Forms} from "./Forms/Forms";
+import {Forms} from "./Contents/SubscribeContents";
 import {Header} from "./Header/Header";
 
 const SubscribePage = () => {
