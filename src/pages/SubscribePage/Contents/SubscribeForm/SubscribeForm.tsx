@@ -1,9 +1,8 @@
 import {Box, Typography} from "@mui/material";
 import React, {useState} from "react";
 import {ConsentsCheckboxes} from "./ConsentsCheckboxes";
-import {InfoInput} from "./InfoInput/InfoInput";
 import {InputBox} from "./InputBox/InputBox";
-import {PaymentDropdown} from "./PaymentDropdown";
+import {PaymentDropDown} from "./PaymentDropDown/PaymentDropDown";
 import {PaymentPeriodSwitch} from "./PaymentPeriodSwitch/PaymentPeriodSwitch";
 import "./SubscribeForm.css";
 import {SubscribeSubmitButton} from "./SubscribeSubmitButton";
@@ -24,6 +23,7 @@ const initialFormState: ContactForm = {
 
 const SubscribeForm = () => {
   const [formState, setFormState] = useState(initialFormState);
+  const [selectedItem, setSelectedItem] = useState(0);
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const {name, value} = event.target;
@@ -72,7 +72,11 @@ const SubscribeForm = () => {
           <InputBox id={"detail address"} placeholder={"상세 주소"} />
         </form>
         <Box gap={"24px"} display="flex" flexDirection={"column"}>
-          <PaymentDropdown />
+          <PaymentDropDown
+            options={options}
+            selectedItem={selectedItem}
+            onSelectItem={setSelectedItem}
+          />
           <Box display={"flex"} justifyContent="space-between">
             <Typography
               sx={{
@@ -110,3 +114,4 @@ const SubscribeForm = () => {
 };
 
 export {SubscribeForm};
+export const options = ["신용/체크카드", "계좌이체", "간편결제"];

@@ -1,3 +1,4 @@
+import {Box} from "@mui/material";
 import React, {useState} from "react";
 import "./InputBox.css";
 
@@ -18,22 +19,29 @@ export const InputBox: React.FC<InfoInputProps> = ({placeholder, id}) => {
   const handleBlur = () => setIsFocused(false);
 
   return (
-    <div className="container">
-      <label
-        htmlFor={id}
-        className={`label${inputValue || isFocused ? " focused" : ""}`}
-      >
-        {placeholder}
-      </label>
-      <input
-        id={id}
-        type="text"
-        className={`inputField${inputValue || isFocused ? " focused" : ""}`}
-        onFocus={handleFocus}
-        onBlur={handleBlur}
-        value={inputValue}
-        onChange={handleInputChange}
-      />
-    </div>
+    <Box
+      sx={{
+        width: "100%",
+        position: "relative",
+      }}
+    >
+      <div className="container">
+        <label
+          htmlFor={id}
+          className={`label${inputValue || isFocused ? " focused" : ""}`}
+        >
+          {placeholder}
+        </label>
+        <input
+          id={id}
+          type="text"
+          className={`inputField${inputValue || isFocused ? " focused" : ""}`}
+          onFocus={handleFocus}
+          onBlur={handleBlur}
+          value={inputValue}
+          onChange={handleInputChange}
+        />
+      </div>
+    </Box>
   );
 };

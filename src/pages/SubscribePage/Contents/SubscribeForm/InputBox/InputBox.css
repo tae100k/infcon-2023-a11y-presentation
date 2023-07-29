@@ -26,6 +26,7 @@
   padding: 16px;
   border: 2px solid #000;
   background: #e7e2df;
+  box-sizing: border-box; /* Add this line */
 }
 
 .inputField.focused {
