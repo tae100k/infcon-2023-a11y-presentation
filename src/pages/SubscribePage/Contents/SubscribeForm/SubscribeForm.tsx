@@ -3,9 +3,10 @@ import React, {useState} from "react";
 import {ConsentsCheckboxes} from "./ConsentsCheckboxes";
 import {InfoInput} from "./InfoInput";
 import {PaymentDropdown} from "./PaymentDropdown";
-import {PaymentPeriodSwitch} from "./PaymentPeriodSwitch";
+import {PaymentPeriodSwitch} from "./PaymentPeriodSwitch/PaymentPeriodSwitch";
 import "./SubscribeForm.css";
 import {SubscribeSubmitButton} from "./SubscribeSubmitButton";
+
 interface ContactForm {
   name: string;
   email: string;
@@ -42,7 +43,26 @@ const SubscribeForm = () => {
       }}
     >
       <Box gap={"16px"} display="flex" flexDirection={"column"} width="100%">
-        <PaymentPeriodSwitch />
+        <Box
+          display={"flex"}
+          justifyContent="center"
+          flexDirection={"column"}
+          gap={2}
+        >
+          <PaymentPeriodSwitch />
+          <Typography
+            sx={{
+              color: "#000",
+              textAlign: "center",
+              fontSize: "14px",
+              fontWeight: 700,
+              letterSpacing: "0.21px",
+            }}
+          >
+            연간 구독으로 매월 10%를 아끼세요!
+          </Typography>
+        </Box>
+
         <form className="form-container">
           <InfoInput id={"name"} placeholder={"이름"} />
           <InfoInput id={"email"} placeholder={"이메일"} />
