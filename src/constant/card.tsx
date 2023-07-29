@@ -1,5 +1,5 @@
 import {FourIcon, SatelliteIcon, TornadoIcon} from "icons/icon";
-import {CardItemDataType} from "typedef/card";
+import {CardItemDataType} from "types/card";
 
 const commonIconProps = {
   width: {
