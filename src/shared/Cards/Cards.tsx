@@ -1,7 +1,7 @@
 import {Button, Grid, Typography} from "@mui/material";
 import Box from "@mui/material/Box";
 import {cardData} from "constant/card";
-import {ArrowTopRightIcon} from "icons/icon";
+import {ArrowTopRightIcon} from "assets/icons/icon";
 import {useState} from "react";
 
 const Cards = () => {
