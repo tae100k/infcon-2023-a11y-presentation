@@ -3,6 +3,7 @@ import React, {useState} from "react";
 import {ConsentsCheckboxes} from "./ConsentsCheckboxes";
 import {InfoInput} from "./InfoInput";
 import {PaymentDropdown} from "./PaymentDropdown";
+import {PaymentPeriodSwitch} from "./PaymentPeriodSwitch";
 import "./SubscribeForm.css";
 import {SubscribeSubmitButton} from "./SubscribeSubmitButton";
 interface ContactForm {
@@ -41,7 +42,7 @@ const SubscribeForm = () => {
       }}
     >
       <Box gap={"16px"} display="flex" flexDirection={"column"} width="100%">
-        {/* <SubscriptionSelect /> */}
+        <PaymentPeriodSwitch />
         <form className="form-container">
           <InfoInput id={"name"} placeholder={"이름"} />
           <InfoInput id={"email"} placeholder={"이메일"} />
