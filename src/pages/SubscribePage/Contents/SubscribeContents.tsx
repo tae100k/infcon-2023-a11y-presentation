@@ -1,6 +1,6 @@
 import {Box} from "@mui/material";
-import {SubscribeForm} from "./SubscribeForm";
-import SubscribeImage from "./SubscribeImage";
+import ContentsImage from "./ContentsImage/ContentsImage";
+import {SubscribeForm} from "./SubscribeForm/SubscribeForm";
 
 const Forms = () => {
   return (
@@ -26,7 +26,7 @@ const Forms = () => {
           width: "100%",
         }}
       >
-        <SubscribeImage />
+        <ContentsImage />
         <SubscribeForm />
       </Box>
     </Box>
