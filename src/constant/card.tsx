@@ -2,7 +2,7 @@ import {
   CodingScreenImage,
   GroupChoreographyImage,
   UsingAssistiveTechnologyImage,
-} from "assets/images/common/index";
+} from "assets/images/index";
 import {FourIcon, SatelliteIcon, TornadoIcon} from "assets/icons/icon";
 import {CardItemDataType} from "types/card";
 
