@@ -1,24 +1,37 @@
-import React, {ChangeEvent, useState} from "react";
+import React, {useState} from "react";
 import "./InputBox.css";
 
-const InputBox: React.FC = () => {
-  const [inputValue, setInputValue] = useState<string>("");
+interface InfoInputProps {
+  placeholder?: string;
+  id: string;
+}
 
-  const handleChange = (event: ChangeEvent<HTMLInputElement>): void => {
+export const InputBox: React.FC<InfoInputProps> = ({placeholder, id}) => {
+  const [inputValue, setInputValue] = useState("");
+  const [isFocused, setIsFocused] = useState(false);
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   };
 
+  const handleFocus = () => setIsFocused(true);
+  const handleBlur = () => setIsFocused(false);
+
   return (
     <div className="container">
-      <div className="label">이름</div>
+      <div className={`label${inputValue || isFocused ? " focused" : ""}`}>
+        이름
+      </div>
       <input
+        id={id}
         type="text"
-        value={inputValue}
-        onChange={handleChange}
         className="inputField"
+        placeholder={inputValue || isFocused ? "" : placeholder}
+        onFocus={handleFocus}
+        onBlur={handleBlur}
+        value={inputValue}
+        onChange={handleInputChange}
       />
     </div>
   );
 };
-
-export default InputBox;

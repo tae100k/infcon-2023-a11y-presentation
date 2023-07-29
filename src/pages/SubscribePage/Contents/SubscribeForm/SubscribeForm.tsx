@@ -1,8 +1,8 @@
 import {Box, Typography} from "@mui/material";
 import React, {useState} from "react";
 import {ConsentsCheckboxes} from "./ConsentsCheckboxes";
-import {InfoInput} from "./InfoInput";
-import InputBox from "./InputBox/InputBox";
+import {InfoInput} from "./InfoInput/InfoInput";
+import {InputBox} from "./InputBox/InputBox";
 import {PaymentDropdown} from "./PaymentDropdown";
 import {PaymentPeriodSwitch} from "./PaymentPeriodSwitch/PaymentPeriodSwitch";
 import "./SubscribeForm.css";
@@ -65,7 +65,7 @@ const SubscribeForm = () => {
         </Box>
 
         <form className="form-container">
-          <InputBox />
+          <InputBox id={"text"} />
           <InfoInput id={"name"} placeholder={"이름"} />
           <InfoInput id={"email"} placeholder={"이메일"} />
           <InfoInput id={"number"} placeholder={"전화번호"} />

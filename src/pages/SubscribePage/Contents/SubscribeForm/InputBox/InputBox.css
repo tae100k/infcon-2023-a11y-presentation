@@ -1,53 +1,32 @@
 .container {
-  width: 503px;
-  height: 52px;
-  padding: 8px;
-  background: #e7e2df;
-  border: 1px solid #000;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 8px;
-  display: inline-flex;
-  flex-direction: column;
+  position: relative;
 }
 
 .label {
-  text-align: center;
-  color: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  top: 18px;
+  left: 18px;
+  padding: 0;
+  transition: all 0.3s;
+  pointer-events: none;
+  color: #000;
+  opacity: 0.5;
+}
+
+.label.focused {
+  top: 6px;
+  left: 6px;
   font-size: 12px;
-  font-weight: 500;
-  line-height: 14px;
-  word-wrap: break-word;
+  opacity: 1;
 }
 
 .inputField {
-  flex-grow: 1;
-  padding: 0;
-  border: none;
-  background: transparent;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 18px;
-  word-wrap: break-word;
-  color: #000;
   width: 100%;
-}
-
-.inputField::placeholder {
-  color: transparent;
-}
-
-.inputField:focus::placeholder {
-  color: rgba(0, 0, 0, 0.6);
+  padding: 16px;
+  border: 2px solid #000;
+  background: #e7e2df;
 }
 
 .inputField:focus {
   outline: none;
-}
-
-/* Style for when input is not focused and empty */
-.inputField:not(:focus):placeholder-shown {
-  padding: 16px;
-  border: 2px solid #000;
-  background: #e7e2df;
 }
