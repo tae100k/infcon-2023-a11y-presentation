@@ -19,14 +19,16 @@ export const InputBox: React.FC<InfoInputProps> = ({placeholder, id}) => {
 
   return (
     <div className="container">
-      <div className={`label${inputValue || isFocused ? " focused" : ""}`}>
-        이름
-      </div>
+      <label
+        htmlFor={id}
+        className={`label${inputValue || isFocused ? " focused" : ""}`}
+      >
+        {placeholder}
+      </label>
       <input
         id={id}
         type="text"
-        className="inputField"
-        placeholder={inputValue || isFocused ? "" : placeholder}
+        className={`inputField${inputValue || isFocused ? " focused" : ""}`}
         onFocus={handleFocus}
         onBlur={handleBlur}
         value={inputValue}

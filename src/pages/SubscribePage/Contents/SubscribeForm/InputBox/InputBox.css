@@ -1,5 +1,6 @@
 .container {
   position: relative;
+  height: 52px;
 }
 
 .label {
@@ -9,13 +10,13 @@
   padding: 0;
   transition: all 0.3s;
   pointer-events: none;
-  color: #000;
+  color: black;
   opacity: 0.5;
 }
 
 .label.focused {
-  top: 6px;
-  left: 6px;
+  top: 8px;
+  left: 16px;
   font-size: 12px;
   opacity: 1;
 }
@@ -27,6 +28,6 @@
   background: #e7e2df;
 }
 
-.inputField:focus {
-  outline: none;
+.inputField.focused {
+  padding: 26px 16px 8px;
 }

@@ -65,12 +65,11 @@ const SubscribeForm = () => {
         </Box>
 
         <form className="form-container">
-          <InputBox id={"text"} />
-          <InfoInput id={"name"} placeholder={"이름"} />
-          <InfoInput id={"email"} placeholder={"이메일"} />
-          <InfoInput id={"number"} placeholder={"전화번호"} />
-          <InfoInput id={"address"} placeholder={"도로명 주소"} />
-          <InfoInput id={"detail address"} placeholder={"상세 주소"} />
+          <InputBox id={"name"} placeholder={"이름"} />
+          <InputBox id={"email"} placeholder={"이메일"} />
+          <InputBox id={"number"} placeholder={"전화번호"} />
+          <InputBox id={"address"} placeholder={"도로명 주소"} />
+          <InputBox id={"detail address"} placeholder={"상세 주소"} />
         </form>
         <Box gap={"24px"} display="flex" flexDirection={"column"}>
           <PaymentDropdown />
