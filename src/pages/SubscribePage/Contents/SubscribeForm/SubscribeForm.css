@@ -1,0 +1,13 @@
+.info-input {
+  width: 100%;
+  padding: 8px 16px;
+  border: 2px solid #000;
+  background: #e7e2df;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+}

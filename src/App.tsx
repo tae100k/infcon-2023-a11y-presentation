@@ -1,7 +1,7 @@
-import CollectionPage from "CollectionPage";
-import MainPage from "MainPage";
+import CollectionPage from "pages/CollectionPage";
+import MainPage from "pages/MainPage";
 import {BrowserRouter, Route, Routes} from "react-router-dom";
-import SubscribePage from "SubscribePage";
+import SubscribePage from "pages/SubscribePage";
 
 function App() {
   return (

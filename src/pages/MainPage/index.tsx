@@ -1,5 +1,5 @@
 import {Box} from "@mui/material";
-import {Carousels} from "MainPage/Carousels/Carousels";
+import {Carousels} from "pages/MainPage/Carousels/Carousels";
 import {Cards} from "shared/Cards/Cards";
 import {Copyright} from "shared/Copyright/Copyright";
 import {Header} from "./Header/Header";

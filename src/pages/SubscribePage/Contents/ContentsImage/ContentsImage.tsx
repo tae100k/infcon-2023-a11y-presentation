@@ -1,11 +1,11 @@
 import {Box} from "@mui/material";
 
-const SubscribeImage = () => {
+const ContentsImage = () => {
   return (
     <Box
       component="img"
       src="images/three-people.jpg"
-      alt={"three people"}
+      alt={"흰 표면에 누워있는 여성 세 명"}
       loading="lazy"
       sx={{
         border: "1px solid black",
@@ -18,4 +18,4 @@ const SubscribeImage = () => {
   );
 };
 
-export default SubscribeImage;
+export default ContentsImage;
