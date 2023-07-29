@@ -1,0 +1,23 @@
+.info-input {
+  width: 100%;
+  padding: 6px 12px;
+  font-size: 16px;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+  border-radius: 4px;
+  background: #e7e2df;
+  outline: none;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+
+.info-input:focus {
+  border-color: #0288d1;
+  box-shadow: 0 0 0 2px rgba(2, 136, 209, 0.2);
+}
+
+.display-text {
+  margin-top: 16px;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-size: 16px;
+}
