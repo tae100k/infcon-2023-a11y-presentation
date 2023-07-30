@@ -1,7 +1,9 @@
 import {ChevronLeft, ChevronRight} from "@mui/icons-material";
 import {Box, Grid, IconButton} from "@mui/material";
-import {carouselItems, VISIBLE_CAROUSEL_LENGTH} from "constant/carousel";
+import {carouselItems} from "constant/carousel";
 import {useEffect, useRef, useState} from "react";
+import {getRotatedItems} from "service/carousel.service";
+import {CarouselItemCard} from "./CarouselItemCard";
 
 export const SelfRotatingSlider = () => {
   const items = carouselItems;
@@ -11,7 +13,7 @@ export const SelfRotatingSlider = () => {
   useEffect(() => {
     sliderTimeout.current = setInterval(() => {
       moveRight();
-    }, 500);
+    }, 2000);
 
     return () => {
       if (sliderTimeout.current) clearInterval(sliderTimeout.current);
@@ -28,50 +30,7 @@ export const SelfRotatingSlider = () => {
     );
   };
 
-  const getRotatedItems = () => {
-    const halfLength = Math.floor(VISIBLE_CAROUSEL_LENGTH / 2);
-    const leftVisibleItems = Array.from({length: halfLength}, (_, i) => {
-      const index = (activeIndex - i - 1 + items.length) % items.length;
-      return items[index];
-    }).reverse();
-    const rightVisibleItems = Array.from({length: halfLength}, (_, i) => {
-      const index = (activeIndex + i + 1) % items.length;
-      return items[index];
-    });
-    return [...leftVisibleItems, items[activeIndex], ...rightVisibleItems];
-  };
-
-  const getScaleValue = (index: number) => {
-    const middle = Math.floor(VISIBLE_CAROUSEL_LENGTH / 2);
-    const diff = Math.abs(middle - index);
-    return diff === 0 ? 1 : diff === 1 ? 7 / 8 : 3 / 4;
-  };
-
-  const getSizeValue = (index: number) => {
-    const aspectRatio = 2 / 3;
-    let maxWidth, maxHeight;
-
-    if (index === 2) {
-      // First item, index 1 (0-based index)
-      maxWidth = 480;
-      maxHeight = maxWidth / aspectRatio;
-    } else if (index === 1 || index === 3) {
-      // Second item from the start and the end, index 2 and 0
-      maxWidth = 307;
-      maxHeight = maxWidth / aspectRatio;
-    } else {
-      // Remaining items
-      maxWidth = 240;
-      maxHeight = maxWidth / aspectRatio;
-    }
-
-    return {
-      width: maxWidth + "px",
-      height: maxHeight + "px",
-    };
-  };
-
-  const rotatedItems = getRotatedItems();
+  const rotatedItems = getRotatedItems(carouselItems, activeIndex);
 
   return (
     <Box
@@ -86,10 +45,22 @@ export const SelfRotatingSlider = () => {
         onClick={moveLeft}
         sx={{
           position: "absolute",
-          left: 0,
-          top: "50%",
+          left: {sm: 20, md: 120},
           transform: "translateY(-50%)",
+          top: "50%",
+          borderRadius: "50%",
+          bgcolor: "black",
+          border: "2px solid white",
+          color: "white",
           zIndex: 10,
+          "&:hover": {
+            backgroundColor: "black",
+            borderColor: "white",
+          },
+          display: {
+            xs: "none",
+            sm: "flex",
+          },
         }}
       >
         <ChevronLeft />
@@ -124,20 +95,7 @@ export const SelfRotatingSlider = () => {
             }}
           >
             {rotatedItems.map((item, index) => (
-              <Grid
-                item
-                key={item.id}
-                sx={{
-                  ...getSizeValue(index),
-                  borderRadius: "48px 0px",
-                  border: "1px solid #000",
-                  background: `lightgray 50% / cover no-repeat`,
-                  transform: `scale(${getScaleValue(index)})`,
-                  transition: "transform 0.5s  zIndex 0.5s",
-                  zIndex: getScaleValue(index) === 1 ? 1 : 0,
-                  backgroundImage: `url(${item.src})`,
-                }}
-              />
+              <CarouselItemCard item={item} index={index} />
             ))}
           </Grid>
         </Box>
@@ -146,10 +104,22 @@ export const SelfRotatingSlider = () => {
         onClick={moveRight}
         sx={{
           position: "absolute",
-          right: 0,
+          right: {sm: 20, md: 120},
           top: "50%",
           transform: "translateY(-50%)",
           zIndex: 10,
+          borderRadius: "50%",
+          bgcolor: "black",
+          border: "2px solid white",
+          color: "white",
+          "&:hover": {
+            backgroundColor: "black",
+            borderColor: "white",
+          },
+          display: {
+            xs: "none",
+            sm: "flex",
+          },
         }}
       >
         <ChevronRight />

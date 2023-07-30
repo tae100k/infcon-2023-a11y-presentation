@@ -1,19 +1,29 @@
+import {Grid} from "@mui/material";
 import React from "react";
+import {getScaleValue, getSizeValue} from "service/carousel.service";
+import {CarouselItemType} from "types/carousel";
 
 interface CarouselItemCardProps {
-  src: string;
+  item: CarouselItemType;
+  index: number;
 }
 
-export const CarouselItemCard: React.FC<CarouselItemCardProps> = ({src}) => {
+export const CarouselItemCard: React.FC<CarouselItemCardProps> = ({
+  item,
+  index,
+}) => {
   return (
-    <img
-      src={src}
-      alt="carousel item"
-      style={{
-        borderRadius: "6px",
-        width: "100%",
-        height: "100%",
-        objectFit: "cover",
+    <Grid
+      item
+      key={item.id}
+      sx={{
+        ...getSizeValue(index),
+        borderRadius: "48px 0px",
+        border: "1px solid #000",
+        background: `lightgray 50% / cover no-repeat`,
+        transform: `scale(${getScaleValue(index)})`,
+        transition: "transform 0.5s  zIndex 0.5s",
+        backgroundImage: `url(${item.src})`,
       }}
     />
   );
