@@ -1,7 +1,7 @@
-import {Button, Grid, Typography} from "@mui/material";
+import {Button, Grid, Link, Typography} from "@mui/material";
 import Box from "@mui/material/Box";
 import {cardData} from "constant/card";
-import {ArrowTopRightIcon} from "icons/icon";
+import {ArrowTopRightIcon} from "assets/icons/icon";
 import {useState} from "react";
 
 const Cards = () => {
@@ -108,40 +108,50 @@ const Cards = () => {
 
                 <Box display="flex" justifyContent={"space-between"}>
                   {card.icon}
-                  <Button
-                    variant="outlined"
-                    sx={{
-                      p: "8px 12px",
-                      borderRadius: "9999px",
-                      alignSelf: "flex-end",
-                      height: "fit-content",
-                      color: "black",
-                      borderColor: "black",
-                      gap: "4px",
-                      textAlign: "center",
-                      fontStyle: "normal",
-                      fontWeight: 700,
-                      fontSize: {
-                        xs: "12px",
-                        sm: "13px",
-                      },
-                      backgroundColor:
-                        hoveredCard !== null ? "#FFF" : "transparent",
-                    }}
+                  <Link
+                    href={card.href}
+                    target={card.isExternal ? "_blank" : "_self"}
+                    rel={card.isExternal ? "noopener noreferrer" : ""}
+                    underline="none"
                   >
-                    Go to Page
-                    <ArrowTopRightIcon
+                    <Button
+                      variant="outlined"
                       sx={{
+                        p: "8px 12px",
+                        borderRadius: "9999px",
+                        alignSelf: "flex-end",
+                        height: "fit-content",
+                        color: "black",
+                        borderColor: "black",
+                        gap: "4px",
+                        textAlign: "center",
+                        fontStyle: "normal",
+                        fontWeight: 700,
                         fontSize: {
-                          xs: "14px",
-                          sm: "16px",
-                          md: "18px",
-                          lg: "20px",
-                          xl: "20px",
+                          xs: "12px",
+                          sm: "13px",
+                        },
+                        backgroundColor:
+                          hoveredCard !== null ? "#FFF" : "transparent",
+                        "&:hover": {
+                          backgroundColor: "white",
                         },
                       }}
-                    />
-                  </Button>
+                    >
+                      Go to Page
+                      <ArrowTopRightIcon
+                        sx={{
+                          fontSize: {
+                            xs: "14px",
+                            sm: "16px",
+                            md: "18px",
+                            lg: "20px",
+                            xl: "20px",
+                          },
+                        }}
+                      />
+                    </Button>
+                  </Link>
                 </Box>
               </Box>
             </Grid>

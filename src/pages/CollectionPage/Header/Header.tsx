@@ -1,4 +1,5 @@
 import {Box, Typography} from "@mui/material";
+import {WalkingModelsImage} from "assets/images";
 
 const Header = () => {
   return (
@@ -10,6 +11,10 @@ const Header = () => {
         justifyContent: "center",
         alignItems: "center",
         gap: "16px",
+        backgroundImage: `url(${WalkingModelsImage})`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
       }}
     >
       <Typography

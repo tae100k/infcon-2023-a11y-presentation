@@ -1,4 +1,12 @@
 import {ImageList, ImageListItem} from "@mui/material";
+import {
+  CollectionImage1,
+  CollectionImage2,
+  CollectionImage3,
+  CollectionImage4,
+  CollectionImage5,
+  CollectionImage6,
+} from "assets/images";
 
 export const ImageLists = () => {
   return (
@@ -34,42 +42,42 @@ export const ImageLists = () => {
 
 export const itemData = [
   {
-    img: "https://images.unsplash.com/photo-1551963831-b3b1ca40c98e",
+    img: CollectionImage1,
     title: "Breakfast",
     rows: 4,
     cols: 5,
     borderRadius: "48px 0px",
   },
   {
-    img: "https://images.unsplash.com/photo-1551782450-a2132b4ba21d",
+    img: CollectionImage2,
     title: "Burger",
     rows: 2,
     cols: 10,
     borderRadius: "0px 48px",
   },
   {
-    img: "https://images.unsplash.com/photo-1522770179533-24471fcdba45",
+    img: CollectionImage3,
     title: "Camera",
     rows: 3,
     cols: 5,
     borderRadius: "0px 48px",
   },
   {
-    img: "https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c",
+    img: CollectionImage4,
     title: "Coffee",
     rows: 4,
     cols: 5,
     borderRadius: "48px 0px",
   },
   {
-    img: "https://images.unsplash.com/photo-1516802273409-68526ee1bdd6",
+    img: CollectionImage5,
     title: "Basketball",
     rows: 3,
     cols: 10,
     borderRadius: "48px 0px",
   },
   {
-    img: "https://images.unsplash.com/photo-1518756131217-31eb79b20e8f",
+    img: CollectionImage6,
     title: "Fern",
     rows: 2,
     cols: 5,
