@@ -4,7 +4,6 @@ import SelfRotatingSlider from "./CarouselsList";
 const Carousels = () => {
   return (
     <>
-      {" "}
       <Box
         sx={{
           display: "flex",

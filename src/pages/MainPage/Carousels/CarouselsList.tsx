@@ -1,15 +1,10 @@
 import {Box, Grid, IconButton} from "@mui/material";
 import React, {useEffect, useRef, useState} from "react";
 import {ChevronLeft, ChevronRight} from "@mui/icons-material";
+import {carouselItems} from "constant/carousel";
 
 const SelfRotatingSlider = () => {
-  const items = [
-    {key: "item1", component: <Item number={1} color="red" />},
-    {key: "item2", component: <Item number={2} color="blue" />},
-    {key: "item3", component: <Item number={3} color="green" />},
-    {key: "item4", component: <Item number={4} color="yellow" />},
-    {key: "item5", component: <Item number={5} color="purple" />},
-  ];
+  const items = carouselItems;
   const [activeIndex, setActiveIndex] = useState(Math.floor(items.length / 2));
   const sliderTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -100,7 +95,7 @@ const SelfRotatingSlider = () => {
             {rotatedItems.map((item, index) => (
               <Grid
                 item
-                key={item.key}
+                key={item.id}
                 sx={{
                   ...getSizeValue(index),
                   borderRadius: "48px 0px",
@@ -111,7 +106,7 @@ const SelfRotatingSlider = () => {
                   zIndex: getScaleValue(index) === 1 ? 1 : 0,
                 }}
               >
-                {item.component}
+                <CarouselItemCard src={item.src} />
               </Grid>
             ))}
           </Grid>
@@ -135,12 +130,11 @@ const SelfRotatingSlider = () => {
 
 export default SelfRotatingSlider;
 
-interface ItemProps {
-  number: number;
-  color: string;
+interface CarouselItemCardProps {
+  src: string;
 }
 
-export const Item: React.FC<ItemProps> = ({number, color}) => {
+export const CarouselItemCard: React.FC<CarouselItemCardProps> = ({src}) => {
   return (
     <Box
       sx={{
@@ -152,7 +146,16 @@ export const Item: React.FC<ItemProps> = ({number, color}) => {
         borderRadius: "6px",
       }}
     >
-      {number}
+      <img
+        src={src}
+        alt="carousel item"
+        style={{
+          borderRadius: "6px",
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+        }}
+      />
     </Box>
   );
 };
