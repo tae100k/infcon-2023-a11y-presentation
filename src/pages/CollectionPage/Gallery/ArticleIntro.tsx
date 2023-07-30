@@ -1,4 +1,5 @@
 import {Box, Typography} from "@mui/material";
+import {ArticleImage1, ArticleImage2} from "assets/images";
 
 export const ArticleIntro = () => {
   return (
@@ -50,7 +51,7 @@ export const ArticleIntro = () => {
               md: "0px 48px",
             },
             border: "1px solid var(--black, #000)",
-            background: `url(<path-to-image>), lightgray 50% / cover no-repeat`,
+            background: `url(${ArticleImage1}), lightgray 50% / cover no-repeat`,
             paddingBottom: {
               xs: "50%",
               sm: "40%",
@@ -65,7 +66,7 @@ export const ArticleIntro = () => {
             color: "#7B7B7B",
             fontStyle: "normal",
             fontWeight: 400,
-            lineHeight: "150%", // 18px
+            lineHeight: "150%",
             letterSpacing: "0.18px",
             fontSize: {
               xs: "10px",
@@ -88,13 +89,14 @@ export const ArticleIntro = () => {
             md: "48px 0px",
           },
           border: "1px solid var(--black, #000)",
-          background: `url(<path-to-image>), lightgray 50% / cover no-repeat`,
+          background: `url(${ArticleImage2}), lightgray 50% / cover no-repeat`,
           paddingBottom: {
             xs: "50%",
             sm: "40%",
             md: "25%",
           },
           position: "relative",
+          minHeight: "624px", // should be fixed
         }}
       />
     </Box>

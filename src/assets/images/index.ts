@@ -12,6 +12,14 @@ import CarouselImage7 from "./main/carousel/carousel-image-7.jpg";
 import CarouselImage8 from "./main/carousel/carousel-image-8.jpg";
 import CarouselImage9 from "./main/carousel/carousel-image-9.jpg";
 import CarouselImage10 from "./main/carousel/carousel-image-10.jpg";
+import ArticleImage1 from "./collection/article-image-1.jpg";
+import ArticleImage2 from "./collection/article-image-2.jpg";
+import CollectionImage1 from "./collection/collection-image-1.jpg";
+import CollectionImage2 from "./collection/collection-image-2.jpg";
+import CollectionImage3 from "./collection/collection-image-3.jpg";
+import CollectionImage4 from "./collection/collection-image-4.jpg";
+import CollectionImage5 from "./collection/collection-image-5.jpg";
+import CollectionImage6 from "./collection/collection-image-6.jpg";
 
 export {
   CodingScreenImage,
@@ -28,4 +36,12 @@ export {
   CarouselImage8,
   CarouselImage9,
   CarouselImage10,
+  ArticleImage1,
+  ArticleImage2,
+  CollectionImage1,
+  CollectionImage2,
+  CollectionImage3,
+  CollectionImage4,
+  CollectionImage5,
+  CollectionImage6,
 };
