@@ -1,9 +1,9 @@
-import {ChevronLeft, ChevronRight} from "@mui/icons-material";
-import {Box, Grid, IconButton} from "@mui/material";
+import {Box, Grid} from "@mui/material";
 import {carouselItems} from "constant/carousel";
 import {useEffect, useRef, useState} from "react";
 import {getRotatedItems} from "service/carousel.service";
 import {CarouselItemCard} from "./CarouselItemCard";
+import {NavigationButton} from "./NavigationButton";
 
 export const SelfRotatingSlider = () => {
   const items = carouselItems;
@@ -41,30 +41,7 @@ export const SelfRotatingSlider = () => {
         pb: "120px",
       }}
     >
-      <IconButton
-        onClick={moveLeft}
-        sx={{
-          position: "absolute",
-          left: {sm: 20, md: 120},
-          transform: "translateY(-50%)",
-          top: "50%",
-          borderRadius: "50%",
-          bgcolor: "black",
-          border: "2px solid white",
-          color: "white",
-          zIndex: 10,
-          "&:hover": {
-            backgroundColor: "black",
-            borderColor: "white",
-          },
-          display: {
-            xs: "none",
-            sm: "flex",
-          },
-        }}
-      >
-        <ChevronLeft />
-      </IconButton>
+      <NavigationButton direction="left" onClick={moveLeft} />
       <Box
         sx={{
           width: "100%",
@@ -100,30 +77,7 @@ export const SelfRotatingSlider = () => {
           </Grid>
         </Box>
       </Box>
-      <IconButton
-        onClick={moveRight}
-        sx={{
-          position: "absolute",
-          right: {sm: 20, md: 120},
-          top: "50%",
-          transform: "translateY(-50%)",
-          zIndex: 10,
-          borderRadius: "50%",
-          bgcolor: "black",
-          border: "2px solid white",
-          color: "white",
-          "&:hover": {
-            backgroundColor: "black",
-            borderColor: "white",
-          },
-          display: {
-            xs: "none",
-            sm: "flex",
-          },
-        }}
-      >
-        <ChevronRight />
-      </IconButton>
+      <NavigationButton direction="right" onClick={moveRight} />
     </Box>
   );
 };
