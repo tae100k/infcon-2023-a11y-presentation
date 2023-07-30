@@ -1,9 +1,9 @@
-import {Box, Grid, IconButton} from "@mui/material";
-import React, {useEffect, useRef, useState} from "react";
 import {ChevronLeft, ChevronRight} from "@mui/icons-material";
+import {Box, Grid, IconButton} from "@mui/material";
 import {carouselItems} from "constant/carousel";
+import {useEffect, useRef, useState} from "react";
 
-const SelfRotatingSlider = () => {
+export const SelfRotatingSlider = () => {
   const items = carouselItems;
   const [activeIndex, setActiveIndex] = useState(Math.floor(items.length / 2));
   const sliderTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -27,15 +27,22 @@ const SelfRotatingSlider = () => {
       (prevIndex) => (prevIndex - 1 + items.length) % items.length
     );
   };
-
+  const visibleItemsLength = 5;
   const getRotatedItems = () => {
-    const leftItems = items.slice(0, activeIndex);
-    const rightItems = items.slice(activeIndex + 1);
-    return [...rightItems, ...leftItems, items[activeIndex]];
+    const halfLength = Math.floor(visibleItemsLength / 2);
+    const leftVisibleItems = Array.from({length: halfLength}, (_, i) => {
+      const index = (activeIndex - i - 1 + items.length) % items.length;
+      return items[index];
+    }).reverse();
+    const rightVisibleItems = Array.from({length: halfLength}, (_, i) => {
+      const index = (activeIndex + i + 1) % items.length;
+      return items[index];
+    });
+    return [...leftVisibleItems, items[activeIndex], ...rightVisibleItems];
   };
 
   const getScaleValue = (index: number) => {
-    const middle = Math.floor(items.length / 2);
+    const middle = Math.floor(visibleItemsLength / 2);
     const diff = Math.abs(middle - index);
     return diff === 0 ? 1 : diff === 1 ? 7 / 8 : 3 / 4;
   };
@@ -104,9 +111,10 @@ const SelfRotatingSlider = () => {
                   transform: `scale(${getScaleValue(index)})`,
                   transition: "transform 0.5s  zIndex 0.5s",
                   zIndex: getScaleValue(index) === 1 ? 1 : 0,
+                  backgroundImage: `url(${item.src})`,
                 }}
               >
-                <CarouselItemCard src={item.src} />
+                {/* <CarouselItemCard src={item.src} /> */}
               </Grid>
             ))}
           </Grid>
@@ -124,38 +132,6 @@ const SelfRotatingSlider = () => {
       >
         <ChevronRight />
       </IconButton>
-    </Box>
-  );
-};
-
-export default SelfRotatingSlider;
-
-interface CarouselItemCardProps {
-  src: string;
-}
-
-export const CarouselItemCard: React.FC<CarouselItemCardProps> = ({src}) => {
-  return (
-    <Box
-      sx={{
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-        fontSize: "28px",
-        fontWeight: "bold",
-        borderRadius: "6px",
-      }}
-    >
-      <img
-        src={src}
-        alt="carousel item"
-        style={{
-          borderRadius: "6px",
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-        }}
-      />
     </Box>
   );
 };
