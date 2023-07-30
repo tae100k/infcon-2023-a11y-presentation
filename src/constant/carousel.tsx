@@ -24,3 +24,5 @@ export const carouselItems: CarouselItemType[] = [
   {id: "image-9", src: CarouselImage9},
   {id: "image-10", src: CarouselImage10},
 ];
+
+export const VISIBLE_CAROUSEL_LENGTH = 5;
