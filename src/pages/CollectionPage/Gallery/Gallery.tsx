@@ -1,6 +1,6 @@
-import { Box, ImageList, ImageListItem, Typography } from "@mui/material";
-import { GalleryTitle } from "./GalleryTitle";
-import { GalleryArticle } from "./GalleryArticle";
+import {Box} from "@mui/material";
+import {GalleryArticle} from "./GalleryArticle";
+import {GalleryTitle} from "./GalleryTitle";
 
 export const Gallery = () => {
   return (
