@@ -1,12 +1,5 @@
 import {ImageList, ImageListItem} from "@mui/material";
-import {
-  CollectionImage1,
-  CollectionImage2,
-  CollectionImage3,
-  CollectionImage4,
-  CollectionImage5,
-  CollectionImage6,
-} from "assets/images";
+import {galleryGridImages} from "constant/gallery";
 
 export const ImageLists = () => {
   return (
@@ -19,7 +12,7 @@ export const ImageLists = () => {
         overflow: "visible",
       }}
     >
-      {itemData.map((item) => (
+      {galleryGridImages.map((item) => (
         <ImageListItem
           key={item.img}
           cols={item.cols || 1}
@@ -39,51 +32,6 @@ export const ImageLists = () => {
     </ImageList>
   );
 };
-
-export const itemData = [
-  {
-    img: CollectionImage1,
-    title: "Breakfast",
-    rows: 4,
-    cols: 5,
-    borderRadius: "48px 0px",
-  },
-  {
-    img: CollectionImage2,
-    title: "Burger",
-    rows: 2,
-    cols: 10,
-    borderRadius: "0px 48px",
-  },
-  {
-    img: CollectionImage3,
-    title: "Camera",
-    rows: 3,
-    cols: 5,
-    borderRadius: "0px 48px",
-  },
-  {
-    img: CollectionImage4,
-    title: "Coffee",
-    rows: 4,
-    cols: 5,
-    borderRadius: "48px 0px",
-  },
-  {
-    img: CollectionImage5,
-    title: "Basketball",
-    rows: 3,
-    cols: 10,
-    borderRadius: "48px 0px",
-  },
-  {
-    img: CollectionImage6,
-    title: "Fern",
-    rows: 2,
-    cols: 5,
-    borderRadius: "0px 48px",
-  },
-];
 
 export const srcset = (image: string, size: number, rows = 1, cols = 1) => {
   return {
