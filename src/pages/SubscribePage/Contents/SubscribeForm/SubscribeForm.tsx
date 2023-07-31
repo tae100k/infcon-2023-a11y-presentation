@@ -1,4 +1,5 @@
 import {Box, Typography} from "@mui/material";
+import {paymentMethodOptions} from "constant/card";
 import React, {useState} from "react";
 import {ConsentsCheckboxes} from "./ConsentsCheckboxes";
 import {InputBox} from "./InputBox/InputBox";
@@ -24,16 +25,18 @@ const initialFormState: ContactForm = {
 const SubscribeForm = () => {
   const [formState, setFormState] = useState(initialFormState);
   const [selectedItem, setSelectedItem] = useState(0);
+  const [selectedOption, setSelectedOption] = useState<"monthly" | "yearly">(
+    "monthly"
+  );
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const {name, value} = event.target;
     setFormState({...formState, [name]: value});
   };
 
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    alert(JSON.stringify(formState, null, 2));
-    setFormState(initialFormState);
+  const handleChangePeriod = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const value = event.target.value as "monthly" | "yearly";
+    setSelectedOption(value);
   };
 
   return (
@@ -50,7 +53,10 @@ const SubscribeForm = () => {
           flexDirection={"column"}
           gap={2}
         >
-          <PaymentPeriodSwitch />
+          <PaymentPeriodSwitch
+            selectedOption={selectedOption}
+            onChange={handleChangePeriod}
+          />
           <Typography
             sx={{
               color: "#000",
@@ -73,7 +79,7 @@ const SubscribeForm = () => {
         </form>
         <Box gap={"24px"} display="flex" flexDirection={"column"}>
           <PaymentDropDown
-            options={options}
+            options={paymentMethodOptions}
             selectedItem={selectedItem}
             onSelectItem={setSelectedItem}
           />
@@ -102,7 +108,7 @@ const SubscribeForm = () => {
                 lineHeight: "125%",
               }}
             >
-              86,400원
+              {selectedOption === "monthly" ? "7,900원" : "86,400원"}
             </Typography>
           </Box>
           <ConsentsCheckboxes />
@@ -114,4 +120,3 @@ const SubscribeForm = () => {
 };
 
 export {SubscribeForm};
-export const options = ["신용/체크카드", "계좌이체", "간편결제"];

@@ -58,3 +58,5 @@ export const cardData: CardItemDataType[] = [
     hoverImageUrl: CodingScreenImage,
   },
 ];
+
+export const paymentMethodOptions = ["신용/체크카드", "계좌이체", "간편결제"];
