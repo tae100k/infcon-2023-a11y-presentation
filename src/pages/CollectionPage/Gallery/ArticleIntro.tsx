@@ -1,4 +1,4 @@
-import {Box, Typography} from "@mui/material";
+import {Box} from "@mui/material";
 import {ArticleImage1, ArticleImage2} from "assets/images";
 
 export const ArticleIntro = () => {
@@ -10,95 +10,83 @@ export const ArticleIntro = () => {
         flexDirection: {
           xs: "column",
           sm: "column",
-          md: "column",
-          lg: "row",
+          md: "row",
         },
       }}
     >
       <Box
         sx={{
-          flex: "2",
+          flex: {xs: "none", sm: "none", md: "2"},
           display: "flex",
           flexDirection: "column",
           gap: "16px",
         }}
       >
-        <Typography
-          sx={{
-            color: "var(--black, #000)",
-            fontStyle: "normal",
-            fontWeight: 400,
-            lineHeight: "150%",
-            letterSpacing: "0.24px",
-            fontSize: {
-              xs: "12px",
-              sm: "14px",
-              md: "16px",
-            },
-          }}
-        >
-          카르의 구 법원(Palais de Justice)에서 공개된 샤넬 2022/23 공방
-          컬렉션이 도쿄에 착륙해 다시 열린 것이다. 일본에서 공개된 이번 쇼는
-          창작적 교류라는 쇼 주제에 걸맞게 입구에서부터 독특한 퍼포먼스가
-          펼쳐졌다.
-        </Typography>
         <Box
           sx={{
-            flex: "1",
             borderRadius: {
-              xs: "0px 24px",
-              sm: "0px 36px",
+              xs: "0px 24px 24px 0px",
+              sm: "0px 36px 36px 0px",
               md: "0px 48px",
             },
+            height: "100%",
             border: "1px solid var(--black, #000)",
-            background: `url(${ArticleImage1}), lightgray 50% / cover no-repeat`,
-            paddingBottom: {
+            position: "relative",
+            overflow: "hidden",
+            paddingTop: {
               xs: "50%",
               sm: "40%",
-              md: "25%",
-            },
-            position: "relative",
-            height: "full",
-          }}
-        />
-        <Typography
-          sx={{
-            color: "#7B7B7B",
-            fontStyle: "normal",
-            fontWeight: 400,
-            lineHeight: "150%",
-            letterSpacing: "0.18px",
-            fontSize: {
-              xs: "10px",
-              sm: "11px",
-              md: "12px",
+              md: "calc(416px * 2 / 3)",
             },
           }}
         >
-          1970년대의 에너지와 영감을 느낄 수 있었던 샤넬의 다카르 공방 컬렉션.
-          까멜리아, 엮은 진주, 주얼 장식 버튼, 비즈와 자수 등 공방 장인들의
-          섬세한 솜씨는 다채로운 컬러와 하우스의 상징적 코드들과 버무려졌다.
-        </Typography>
+          <img
+            src={ArticleImage1}
+            alt="Article 1"
+            style={{
+              objectFit: "cover",
+              objectPosition: "top",
+              width: "100%",
+              height: "100%",
+              position: "absolute",
+              left: "0",
+              top: "0",
+            }}
+          />
+        </Box>
       </Box>
       <Box
         sx={{
-          flex: "1",
+          flex: {xs: "none", sm: "none", md: "1"},
           borderRadius: {
-            xs: "24px 0px",
-            sm: "36px 0px",
+            xs: "24px 0px 0px 24px",
+            sm: "36px 0px 0px 36px",
             md: "48px 0px",
           },
           border: "1px solid var(--black, #000)",
-          background: `url(${ArticleImage2}), lightgray 50% / cover no-repeat`,
-          paddingBottom: {
+          position: "relative",
+          overflow: "hidden",
+          paddingTop: {
             xs: "50%",
             sm: "40%",
-            md: "25%",
+            md: "416px",
           },
-          position: "relative",
-          minHeight: "624px", // should be fixed
         }}
-      />
+      >
+        <img
+          src={ArticleImage2}
+          alt="Article 2"
+          style={{
+            objectFit: "cover",
+            objectPosition: "center",
+            width: "100%",
+            height: "100%",
+            position: "absolute",
+            left: "0",
+            top: "0",
+          }}
+        />
+      </Box>
     </Box>
   );
 };

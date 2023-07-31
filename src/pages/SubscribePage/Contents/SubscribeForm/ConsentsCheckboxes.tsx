@@ -3,32 +3,33 @@ import React from "react";
 import "./SubscribeForm.css";
 
 export const ConsentsCheckboxes = () => {
-  const [checked, setChecked] = React.useState([true, false, false]);
+  const [checked, setChecked] = React.useState({
+    all: true,
+    consent1: true,
+    consent2: true,
+    consent3: false,
+  });
 
-  const handleChange1 = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const isChecked = event.target.checked;
-    setChecked([
-      isChecked,
-      isChecked ? true : checked[1],
-      isChecked ? true : checked[2],
-    ]);
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const {name, checked: isChecked} = event.target;
+
+    if (name === "all") {
+      setChecked({
+        all: isChecked,
+        consent1: isChecked,
+        consent2: isChecked,
+        consent3: isChecked,
+      });
+    } else {
+      setChecked({
+        ...checked,
+        all: false,
+        [name]: isChecked,
+      });
+    }
   };
 
-  const handleChange2 = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const isChecked = event.target.checked;
-    setChecked([isChecked && checked[1], isChecked, checked[2]]);
-  };
-
-  const handleChange3 = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const isChecked = event.target.checked;
-    setChecked([isChecked && checked[0], isChecked, checked[2]]);
-  };
-
-  const handleChange4 = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const isChecked = event.target.checked;
-    setChecked([checked[0], checked[1], isChecked]);
-  };
-  const isAllChecked = () => checked.every((c) => c);
+  const isAllChecked = checked.consent1 && checked.consent2 && checked.consent3;
 
   return (
     <Box>
@@ -36,10 +37,14 @@ export const ConsentsCheckboxes = () => {
         label="전체동의"
         control={
           <Checkbox
-            checked={isAllChecked()}
-            indeterminate={!isAllChecked() && checked.some((c) => c)}
+            name="all"
+            checked={isAllChecked}
+            indeterminate={
+              !isAllChecked &&
+              (checked.consent1 || checked.consent2 || checked.consent3)
+            }
             sx={{borderRadius: "4px"}}
-            onChange={handleChange1}
+            onChange={handleChange}
           />
         }
       />
@@ -48,9 +53,10 @@ export const ConsentsCheckboxes = () => {
           label="전자금융거래 기본약관 (필수)"
           control={
             <Checkbox
-              checked={checked[0]}
+              name="consent1"
+              checked={checked.consent1}
               sx={{borderRadius: "4px"}}
-              onChange={handleChange2}
+              onChange={handleChange}
             />
           }
         />
@@ -58,9 +64,10 @@ export const ConsentsCheckboxes = () => {
           label="개인정보 수집 및 이용 동의 (필수)"
           control={
             <Checkbox
-              checked={checked[1]}
+              name="consent2"
+              checked={checked.consent2}
               sx={{borderRadius: "4px"}}
-              onChange={handleChange3}
+              onChange={handleChange}
             />
           }
         />
@@ -68,9 +75,10 @@ export const ConsentsCheckboxes = () => {
           label="마케팅 활용 동의 및 광구 수신 동의 (선택)"
           control={
             <Checkbox
-              checked={checked[2]}
+              name="consent3"
+              checked={checked.consent3}
               sx={{borderRadius: "4px"}}
-              onChange={handleChange4}
+              onChange={handleChange}
             />
           }
         />
