@@ -1,15 +1,13 @@
-import {useState} from "react";
 import "./PaymentPeriodSwitch.css";
+interface PaymentPeriodSwitchProps {
+  selectedOption: "monthly" | "yearly";
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
 
-export const PaymentPeriodSwitch = () => {
-  const [selectedOption, setSelectedOption] = useState<"monthly" | "yearly">(
-    "monthly"
-  );
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value as "monthly" | "yearly";
-    setSelectedOption(value);
-  };
-
+export const PaymentPeriodSwitch: React.FC<PaymentPeriodSwitchProps> = ({
+  selectedOption,
+  onChange,
+}) => {
   return (
     <div className="toggle-switch">
       <input
@@ -18,7 +16,7 @@ export const PaymentPeriodSwitch = () => {
         name="subscription"
         value="monthly"
         checked={selectedOption === "monthly"}
-        onChange={handleChange}
+        onChange={onChange}
       />
       <label
         htmlFor="monthly"
@@ -33,7 +31,7 @@ export const PaymentPeriodSwitch = () => {
         name="subscription"
         value="yearly"
         checked={selectedOption === "yearly"}
-        onChange={handleChange}
+        onChange={onChange}
       />
       <label
         htmlFor="yearly"
