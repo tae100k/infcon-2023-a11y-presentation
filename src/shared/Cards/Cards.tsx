@@ -18,7 +18,7 @@ const Cards = () => {
               item
               xs={12}
               md={4}
-              onMouseEnter={() => setHoveredCard(index)}
+              // onMouseEnter={() => setHoveredCard(index)}
               onMouseLeave={() => setHoveredCard(null)}
             >
               {hoveredCard !== index ? (

@@ -55,45 +55,38 @@ export const FrontSide: React.FC<FrontSideProps> = ({card, index}) => {
           alignItems="baseline"
         >
           {card.icon}
-          <Link
-            href={card.href}
-            target={card.isExternal ? "_blank" : "_self"}
-            rel={card.isExternal ? "noopener noreferrer" : ""}
-            underline="none"
+          <Button
+            variant="outlined"
+            sx={{
+              p: "8px 12px",
+              borderRadius: "9999px",
+              alignSelf: "flex-end",
+              height: "fit-content",
+              color: "black",
+              borderColor: "black",
+              gap: "4px",
+              textAlign: "center",
+              fontStyle: "normal",
+              fontWeight: 700,
+              fontSize: {
+                xs: "12px",
+                sm: "13px",
+              },
+            }}
           >
-            <Button
-              variant="outlined"
+            Go to Page
+            <ArrowTopRightIcon
               sx={{
-                p: "8px 12px",
-                borderRadius: "9999px",
-                alignSelf: "flex-end",
-                height: "fit-content",
-                color: "black",
-                borderColor: "black",
-                gap: "4px",
-                textAlign: "center",
-                fontStyle: "normal",
-                fontWeight: 700,
                 fontSize: {
-                  xs: "12px",
-                  sm: "13px",
+                  xs: "14px",
+                  sm: "16px",
+                  md: "18px",
+                  lg: "20px",
+                  xl: "20px",
                 },
               }}
-            >
-              Go to Page
-              <ArrowTopRightIcon
-                sx={{
-                  fontSize: {
-                    xs: "14px",
-                    sm: "16px",
-                    md: "18px",
-                    lg: "20px",
-                    xl: "20px",
-                  },
-                }}
-              />
-            </Button>
-          </Link>
+            />
+          </Button>
         </Box>
       </Box>
     </Link>
