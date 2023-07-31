@@ -41,7 +41,7 @@ export const SelfRotatingSlider = () => {
         pb: "120px",
       }}
     >
-      <NavigationButton direction="left" onClick={moveLeft} />
+      {/* <NavigationButton direction="left" onClick={moveLeft} /> */}
       <Box
         sx={{
           width: "100%",
@@ -77,7 +77,7 @@ export const SelfRotatingSlider = () => {
           </Grid>
         </Box>
       </Box>
-      <NavigationButton direction="right" onClick={moveRight} />
+      {/* <NavigationButton direction="right" onClick={moveRight} /> */}
     </Box>
   );
 };
