@@ -1,12 +1,20 @@
-import {ImageList, ImageListItem} from "@mui/material";
+import {ImageList, ImageListItem, Theme, useMediaQuery} from "@mui/material";
 import {galleryGridImages} from "constant/gallery";
 
 export const ImageLists = () => {
+  const isMobile = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.down("sm")
+  );
+  const isTablet = useMediaQuery((theme: Theme) =>
+    theme.breakpoints.between("sm", "md")
+  );
+  const cols = isMobile ? 2 : isTablet ? 3 : 5;
+  const rowHeight = isMobile ? 180 : isTablet ? 150 : 121;
   return (
     <ImageList
       variant="quilted"
-      cols={5}
-      rowHeight={121}
+      cols={cols}
+      rowHeight={rowHeight}
       gap={20}
       sx={{
         overflow: "visible",
