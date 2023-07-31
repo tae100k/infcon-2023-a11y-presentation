@@ -5,9 +5,9 @@ export const ImageLists = () => {
   return (
     <ImageList
       variant="quilted"
-      cols={20}
+      cols={5}
       rowHeight={121}
-      gap={25}
+      gap={20}
       sx={{
         overflow: "visible",
       }}
