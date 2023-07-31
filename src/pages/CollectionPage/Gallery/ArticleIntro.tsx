@@ -1,10 +1,9 @@
-import {Box, Typography} from "@mui/material";
+import {Box} from "@mui/material";
 import {ArticleImage1, ArticleImage2} from "assets/images";
 
 export const ArticleIntro = () => {
   return (
     <Box
-      border="1px solid red"
       display="flex"
       gap={"32px"}
       sx={{
