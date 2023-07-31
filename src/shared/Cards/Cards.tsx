@@ -5,7 +5,7 @@ import {useState} from "react";
 import {BackSide} from "./BackSide";
 import {FrontSide} from "./FrontSide";
 
-const Cards = () => {
+export const Cards = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
   return (
@@ -33,5 +33,3 @@ const Cards = () => {
     </Box>
   );
 };
-
-export {Cards};

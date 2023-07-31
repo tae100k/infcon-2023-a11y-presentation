@@ -1,10 +1,29 @@
-import { Box, Typography } from "@mui/material";
-import { ImageLists } from "./ImageList";
-import { ArticleIntro } from "./ArticleIntro";
+import {Box, Typography} from "@mui/material";
+import {ImageLists} from "./ImageList";
+import {ArticleIntro} from "./ArticleIntro";
 
 export const GalleryArticle = () => {
   return (
     <Box display="flex" gap={"32px"} flexDirection={"column"}>
+      <Typography
+        sx={{
+          color: "var(--black, #000)",
+          fontStyle: "normal",
+          fontWeight: 400,
+          lineHeight: "150%",
+          letterSpacing: "0.24px",
+          fontSize: {
+            xs: "12px",
+            sm: "14px",
+            md: "16px",
+          },
+        }}
+      >
+        지난해 12월 세네갈 다카르의 구 법원(Palais de Justice)에서 공개된 샤넬
+        2022/23 공방 컬렉션이 도쿄에 착륙해 다시 열린 것이다. 일본에서 공개된
+        이번 쇼는 창작적 교류라는 쇼 주제에 걸맞게 입구에서부터 독특한
+        퍼포먼스가 펼쳐졌다.
+      </Typography>
       <ArticleIntro />
       <Typography
         sx={{

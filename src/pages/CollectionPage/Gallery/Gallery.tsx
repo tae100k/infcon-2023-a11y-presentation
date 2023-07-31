@@ -16,8 +16,6 @@ export const Gallery = () => {
         },
         gap: {
           xs: 4,
-          sm: 8,
-          md: 12,
         },
       }}
     >
