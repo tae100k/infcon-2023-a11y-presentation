@@ -36,7 +36,7 @@ export const ArticleIntro = () => {
             paddingTop: {
               xs: "50%",
               sm: "40%",
-              md: "calc(416px * 2 / 3)",
+              md: "calc(546px * 2 / 3)",
             },
           }}
         >
@@ -57,6 +57,7 @@ export const ArticleIntro = () => {
       </Box>
       <Box
         sx={{
+          height: "100%",
           flex: {xs: "none", sm: "none", md: "1"},
           borderRadius: {
             xs: "24px 0px 0px 24px",
@@ -67,9 +68,8 @@ export const ArticleIntro = () => {
           position: "relative",
           overflow: "hidden",
           paddingTop: {
-            xs: "50%",
-            sm: "40%",
-            md: "416px",
+            xs: "100%",
+            md: "546px",
           },
         }}
       >
@@ -78,7 +78,7 @@ export const ArticleIntro = () => {
           alt="Article 2"
           style={{
             objectFit: "cover",
-            objectPosition: "center",
+            objectPosition: "top",
             width: "100%",
             height: "100%",
             position: "absolute",
