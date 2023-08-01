@@ -84,7 +84,7 @@ export const SelfRotatingSlider = () => {
             }}
           >
             {rotatedItems.map((item, index) => (
-              <CarouselItemCard item={item} index={index} />
+              <CarouselItemCard item={item} index={index} key={item.id} />
             ))}
           </Grid>
         </Box>
