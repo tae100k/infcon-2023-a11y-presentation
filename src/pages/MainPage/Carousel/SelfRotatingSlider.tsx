@@ -29,11 +29,19 @@ export const SelfRotatingSlider = () => {
       (prevIndex) => (prevIndex - 1 + items.length) % items.length
     );
   };
-
+  const handleKeyDown = (event: React.KeyboardEvent) => {
+    if (event.key === "ArrowRight") {
+      moveRight();
+    } else if (event.key === "ArrowLeft") {
+      moveLeft();
+    }
+  };
   const rotatedItems = getRotatedItems(carouselItems, activeIndex);
 
   return (
     <Box
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
       sx={{
         position: "relative",
         width: "100%",
@@ -41,7 +49,11 @@ export const SelfRotatingSlider = () => {
         pb: "120px",
       }}
     >
-      {/* <NavigationButton direction="left" onClick={moveLeft} /> */}
+      <NavigationButton
+        direction="left"
+        onClick={moveLeft}
+        aria-label="Previous slide"
+      />
       <Box
         sx={{
           width: "100%",
@@ -77,7 +89,11 @@ export const SelfRotatingSlider = () => {
           </Grid>
         </Box>
       </Box>
-      {/* <NavigationButton direction="right" onClick={moveRight} /> */}
+      <NavigationButton
+        direction="right"
+        onClick={moveRight}
+        aria-label="Next slide"
+      />
     </Box>
   );
 };
