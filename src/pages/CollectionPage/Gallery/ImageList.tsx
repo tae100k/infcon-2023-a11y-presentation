@@ -11,6 +11,7 @@ export const ImageLists = () => {
       sx={{
         overflow: "visible",
       }}
+      role="presentation"
     >
       {galleryGridImages.map((item) => (
         <ImageListItem
