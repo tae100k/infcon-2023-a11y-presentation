@@ -5,14 +5,20 @@ import "./InputBox.css";
 interface InfoInputProps {
   placeholder?: string;
   id: string;
+  onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const InputBox: React.FC<InfoInputProps> = ({placeholder, id}) => {
+export const InputBox: React.FC<InfoInputProps> = ({
+  placeholder,
+  id,
+  onChange,
+}) => {
   const [inputValue, setInputValue] = useState("");
   const [isFocused, setIsFocused] = useState(false);
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
+    onChange?.(event);
   };
 
   const handleFocus = () => setIsFocused(true);

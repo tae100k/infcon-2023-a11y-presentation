@@ -1,8 +1,15 @@
 import {Button} from "@mui/material";
 
-export const SubscribeSubmitButton = () => {
+interface SubscribeSubmitButtonProps {
+  onClick?: () => void;
+}
+
+export const SubscribeSubmitButton: React.FC<SubscribeSubmitButtonProps> = ({
+  onClick,
+}) => {
   return (
     <Button
+      onClick={onClick}
       sx={{
         display: "flex",
         padding: "16px",
@@ -14,9 +21,9 @@ export const SubscribeSubmitButton = () => {
         background: "#000",
         color: "white",
         "&:hover": {
-          background: "#000", // Maintain the background color when hovering
-          borderColor: "#000", // Maintain the border color when hovering
-          opacity: 0.8, // Optional: you can add a slight change in the opacity if you want
+          background: "#000",
+          borderColor: "#000",
+          opacity: 0.8,
         },
       }}
     >
