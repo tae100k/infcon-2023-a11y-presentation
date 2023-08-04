@@ -7,9 +7,8 @@ import {FrontSide} from "./FrontSide";
 
 export const Cards = () => {
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
-
   return (
-    <Box>
+    <Box role="group" aria-label="Card Collection">
       <Grid container spacing={2} p={"24px"} borderTop="2px solid black">
         {cardData.map((card, index) => {
           return (
