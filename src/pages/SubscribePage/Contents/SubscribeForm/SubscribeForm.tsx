@@ -34,8 +34,7 @@ const SubscribeForm = () => {
     setFormState({...formState, [name]: value});
   };
 
-  const handleChangePeriod = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value as "monthly" | "yearly";
+  const handleChangePeriod = (value: "monthly" | "yearly") => {
     setSelectedOption(value);
   };
 

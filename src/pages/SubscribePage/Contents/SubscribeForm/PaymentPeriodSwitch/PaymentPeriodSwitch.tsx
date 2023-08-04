@@ -1,13 +1,17 @@
 import "./PaymentPeriodSwitch.css";
 interface PaymentPeriodSwitchProps {
   selectedOption: "monthly" | "yearly";
-  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChange: (value: "monthly" | "yearly") => void;
 }
 
 export const PaymentPeriodSwitch: React.FC<PaymentPeriodSwitchProps> = ({
   selectedOption,
   onChange,
 }) => {
+  const handlePeriodChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    onChange(event.target.value as "monthly" | "yearly");
+  };
+
   return (
     <div className="toggle-switch">
       <input
@@ -16,7 +20,7 @@ export const PaymentPeriodSwitch: React.FC<PaymentPeriodSwitchProps> = ({
         name="subscription"
         value="monthly"
         checked={selectedOption === "monthly"}
-        onChange={onChange}
+        onChange={handlePeriodChange}
       />
       <label
         htmlFor="monthly"
@@ -31,7 +35,7 @@ export const PaymentPeriodSwitch: React.FC<PaymentPeriodSwitchProps> = ({
         name="subscription"
         value="yearly"
         checked={selectedOption === "yearly"}
-        onChange={onChange}
+        onChange={handlePeriodChange}
       />
       <label
         htmlFor="yearly"
