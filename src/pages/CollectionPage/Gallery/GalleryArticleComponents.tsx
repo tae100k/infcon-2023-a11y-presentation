@@ -1,7 +1,4 @@
-import React from "react";
-import {Box, Typography} from "@mui/material";
-import {ImageLists} from "./ImageList";
-import {ArticleIntro} from "./ArticleIntro";
+import {Typography} from "@mui/material";
 
 export const DefaultTypography = () => (
   <Typography

@@ -13,6 +13,7 @@ export const ArticleIntro = () => {
           md: "row",
         },
       }}
+      role="presentation"
     >
       <Box
         sx={{
@@ -42,7 +43,7 @@ export const ArticleIntro = () => {
         >
           <img
             src={ArticleImage1}
-            alt="Article 1"
+            alt="Fashion clothing displayed on a runway"
             style={{
               objectFit: "cover",
               objectPosition: "top",
@@ -75,7 +76,7 @@ export const ArticleIntro = () => {
       >
         <img
           src={ArticleImage2}
-          alt="Article 2"
+          alt="Elegant dress showcased on a runway"
           style={{
             objectFit: "cover",
             objectPosition: "top",
