@@ -1,4 +1,4 @@
-import {ImageList, ImageListItem, Theme, useMediaQuery} from "@mui/material";
+import {ImageList, ImageListItem} from "@mui/material";
 import {galleryGridImages} from "constant/gallery";
 
 export const ImageLists = () => {

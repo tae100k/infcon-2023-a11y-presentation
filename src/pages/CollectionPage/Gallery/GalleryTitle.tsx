@@ -1,9 +1,10 @@
-import { Box, Typography } from "@mui/material";
+import {Box, Typography} from "@mui/material";
 
 export const GalleryTitle = () => {
   return (
     <Box>
       <Typography
+        lang="ko"
         sx={{
           color: "#000",
           fontStyle: "normal",
