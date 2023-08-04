@@ -16,17 +16,27 @@ export const CarouselItemCard: React.FC<CarouselItemCardProps> = ({
     <Grid
       aria-label={`${item.id}, slide ${index + 1}`}
       aria-roledescription="carouselitem"
-      item
       key={item.id}
       sx={{
+        position: "relative",
         ...getSizeValue(index),
         borderRadius: "48px 0px",
         border: "1px solid #000",
-        background: `lightgray 50% / cover no-repeat`,
+        overflow: "hidden",
         transform: `scale(${getScaleValue(index)})`,
-        transition: "transform 0.5s  zIndex 0.5s",
-        backgroundImage: `url(${item.src})`,
+        transition: "transform 0.5s, zIndex 0.5s",
       }}
-    />
+    >
+      <img
+        src={item.src}
+        alt={item.alt ?? ""}
+        style={{
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+          objectPosition: "center",
+        }}
+      />
+    </Grid>
   );
 };
