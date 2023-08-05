@@ -34,7 +34,7 @@ export const ConsentsCheckboxes = () => {
   return (
     <Box>
       <FormControlLabel
-        label="전체동의"
+        label={<span id="all-consent-label">전체동의</span>}
         control={
           <Checkbox
             name="all"
@@ -43,6 +43,7 @@ export const ConsentsCheckboxes = () => {
               !isAllChecked &&
               (checked.consent1 || checked.consent2 || checked.consent3)
             }
+            inputProps={{"aria-labelledby": "all-consent-label"}}
             sx={{borderRadius: "4px"}}
             onChange={handleChange}
           />
@@ -50,33 +51,42 @@ export const ConsentsCheckboxes = () => {
       />
       <Box sx={{display: "flex", flexDirection: "column", ml: 3}}>
         <FormControlLabel
-          label="전자금융거래 기본약관 (필수)"
+          label={<span id="consent1-label">전자금융거래 기본약관 (필수)</span>}
           control={
             <Checkbox
               name="consent1"
               checked={checked.consent1}
+              inputProps={{"aria-labelledby": "consent1-label"}}
               sx={{borderRadius: "4px"}}
               onChange={handleChange}
             />
           }
         />
         <FormControlLabel
-          label="개인정보 수집 및 이용 동의 (필수)"
+          label={
+            <span id="consent2-label">개인정보 수집 및 이용 동의 (필수)</span>
+          }
           control={
             <Checkbox
               name="consent2"
               checked={checked.consent2}
+              inputProps={{"aria-labelledby": "consent2-label"}}
               sx={{borderRadius: "4px"}}
               onChange={handleChange}
             />
           }
         />
         <FormControlLabel
-          label="마케팅 활용 동의 및 광구 수신 동의 (선택)"
+          label={
+            <span id="consent3-label">
+              마케팅 활용 동의 및 광고 수신 동의 (선택)
+            </span>
+          }
           control={
             <Checkbox
               name="consent3"
               checked={checked.consent3}
+              inputProps={{"aria-labelledby": "consent3-label"}}
               sx={{borderRadius: "4px"}}
               onChange={handleChange}
             />
