@@ -1,11 +1,11 @@
-import {Box, Typography} from "@mui/material";
-import {ImageLists} from "./ImageList";
+import {Box} from "@mui/material";
 import {ArticleIntro} from "./ArticleIntro";
 import {
   BoldTypography,
   DefaultTypography,
   StyledTypography,
 } from "./GalleryArticleComponents";
+import {ImageLists} from "./ImageList";
 
 export const GalleryArticle = () => {
   return (

@@ -8,9 +8,9 @@ const Forms = () => {
       sx={{
         display: "flex",
         padding: {
-          xs: "32px 40px 32px 0px",
-          md: "32px 74px 32px 0px",
-          lg: "32px 148px 32px 0px",
+          xs: "32px 40px 32px 40px",
+          md: "32px 148px 32px 148px",
+          lg: "32px 74px 32px 0px",
         },
       }}
     >
@@ -19,7 +19,7 @@ const Forms = () => {
         gap={{
           xs: "40px",
           md: "48px",
-          lg: "120px",
+          lg: "80px",
         }}
         sx={{
           flexDirection: {xs: "column", lg: "row"},

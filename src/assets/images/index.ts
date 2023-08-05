@@ -20,6 +20,7 @@ import CollectionImage3 from "./collection/collection-image-3.jpg";
 import CollectionImage4 from "./collection/collection-image-4.jpg";
 import CollectionImage5 from "./collection/collection-image-5.jpg";
 import CollectionImage6 from "./collection/collection-image-6.jpg";
+import HaleyLawrenceImage from "./subscribe/haley-lawrence.jpg";
 
 export {
   CodingScreenImage,
@@ -44,4 +45,5 @@ export {
   CollectionImage4,
   CollectionImage5,
   CollectionImage6,
+  HaleyLawrenceImage,
 };
