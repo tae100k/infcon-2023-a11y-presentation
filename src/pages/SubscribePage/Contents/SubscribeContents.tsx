@@ -1,5 +1,5 @@
 import {Box} from "@mui/material";
-import ContentsImage from "./ContentsImage/ContentsImage";
+import {ContentsImage} from "./ContentsImage/ContentsImage";
 import {SubscribeForm} from "./SubscribeForm/SubscribeForm";
 
 const Forms = () => {
@@ -19,7 +19,7 @@ const Forms = () => {
         gap={{
           xs: "40px",
           md: "48px",
-          lg: "120px",
+          lg: "80px",
         }}
         sx={{
           flexDirection: {xs: "column", lg: "row"},

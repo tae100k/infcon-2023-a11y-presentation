@@ -1,21 +1,24 @@
 import {Box} from "@mui/material";
+import {HaleyLawrenceImage} from "assets/images";
 
-const ContentsImage = () => {
+export const ContentsImage = () => {
   return (
     <Box
       component="img"
-      src="images/three-people.jpg"
+      src={HaleyLawrenceImage}
       alt={"흰 표면에 누워있는 여성 세 명"}
       loading="lazy"
       sx={{
-        border: "1px solid black",
-        borderRadius: "0px 48px 48px 0px",
-        display: "flex",
         width: "100%",
         maxWidth: {lg: "669px"},
+        borderRadius: {
+          xs: "16px",
+          sm: "24px",
+          md: "32px",
+          lg: "0px 48px 48px 0px",
+        },
+        border: "2px solid black",
       }}
     />
   );
 };
-
-export default ContentsImage;
