@@ -12,7 +12,7 @@ const ContentsImage = () => {
         borderRadius: "0px 48px 48px 0px",
         display: "flex",
         width: "100%",
-        maxWidth: {md: "669px"},
+        maxWidth: {lg: "669px"},
       }}
     />
   );
