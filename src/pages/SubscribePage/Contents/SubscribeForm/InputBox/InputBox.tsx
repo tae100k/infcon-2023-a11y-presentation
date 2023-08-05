@@ -3,24 +3,31 @@ import React, {useState} from "react";
 import "./InputBox.css";
 
 interface InfoInputProps {
-  placeholder?: string;
   id: string;
+  name?: string;
+  type?: string;
+  placeholder?: string;
   onChange?: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  required?: boolean;
+  autoComplete?: string;
 }
 
 export const InputBox: React.FC<InfoInputProps> = ({
-  placeholder,
   id,
+  name,
+  type = "text",
+  placeholder,
   onChange,
+  required,
+  autoComplete,
 }) => {
   const [inputValue, setInputValue] = useState("");
   const [isFocused, setIsFocused] = useState(false);
 
-  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
     onChange?.(event);
   };
-
   const handleFocus = () => setIsFocused(true);
   const handleBlur = () => setIsFocused(false);
 
@@ -40,12 +47,15 @@ export const InputBox: React.FC<InfoInputProps> = ({
         </label>
         <input
           id={id}
-          type="text"
+          name={name}
+          type={type}
           className={`inputField${inputValue || isFocused ? " focused" : ""}`}
+          onChange={handleChange}
           onFocus={handleFocus}
           onBlur={handleBlur}
           value={inputValue}
-          onChange={handleInputChange}
+          required={required}
+          autoComplete={autoComplete}
         />
       </div>
     </Box>

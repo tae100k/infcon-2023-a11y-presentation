@@ -76,27 +76,48 @@ const SubscribeForm = () => {
         </Box>
 
         <form className="form-container">
-          <InputBox id={"name"} placeholder={"이름"} onChange={handleChange} />
           <InputBox
-            id={"email"}
-            placeholder={"이메일"}
+            id="name"
+            name="name"
+            placeholder="이름"
             onChange={handleChange}
+            required
+            autoComplete="name"
           />
           <InputBox
-            id={"number"}
-            placeholder={"전화번호"}
+            id="email"
+            name="email"
+            type="email"
+            placeholder="이메일"
             onChange={handleChange}
+            required
+            autoComplete="email"
           />
           <InputBox
-            id={"address"}
-            placeholder={"도로명 주소"}
+            id="phone"
+            name="phone"
+            type="tel"
+            placeholder="전화번호"
             onChange={handleChange}
+            required
+            autoComplete="tel"
           />
           <InputBox
-            id={"detail address"}
-            placeholder={"상세 주소"}
+            id="address"
+            name="address"
+            placeholder="도로명 주소"
             onChange={handleChange}
+            required
+            autoComplete="street-address"
           />
+          <InputBox
+            id="address"
+            name="address"
+            placeholder="상세 주소"
+            onChange={handleChange}
+            autoComplete="street-address"
+          />
+
           <Box gap={"24px"} display="flex" flexDirection={"column"}>
             <PaymentDropDown
               options={paymentMethodOptions}
