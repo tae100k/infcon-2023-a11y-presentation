@@ -1,4 +1,6 @@
+import React from "react";
 import "./PaymentPeriodSwitch.css";
+
 interface PaymentPeriodSwitchProps {
   selectedOption: "monthly" | "yearly";
   onChange: (value: "monthly" | "yearly") => void;
@@ -12,8 +14,23 @@ export const PaymentPeriodSwitch: React.FC<PaymentPeriodSwitchProps> = ({
     onChange(event.target.value as "monthly" | "yearly");
   };
 
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
+    if (event.key === "ArrowLeft" && selectedOption === "yearly") {
+      onChange("monthly");
+    }
+    if (event.key === "ArrowRight" && selectedOption === "monthly") {
+      onChange("yearly");
+    }
+  };
+
   return (
-    <div className="toggle-switch">
+    <fieldset
+      className="toggle-switch"
+      role="group"
+      aria-label="Subscription period"
+      onKeyDown={handleKeyDown}
+      tabIndex={0}
+    >
       <input
         type="radio"
         id="monthly"
@@ -21,6 +38,7 @@ export const PaymentPeriodSwitch: React.FC<PaymentPeriodSwitchProps> = ({
         value="monthly"
         checked={selectedOption === "monthly"}
         onChange={handlePeriodChange}
+        aria-checked={selectedOption === "monthly"}
       />
       <label
         htmlFor="monthly"
@@ -36,6 +54,7 @@ export const PaymentPeriodSwitch: React.FC<PaymentPeriodSwitchProps> = ({
         value="yearly"
         checked={selectedOption === "yearly"}
         onChange={handlePeriodChange}
+        aria-checked={selectedOption === "yearly"}
       />
       <label
         htmlFor="yearly"
@@ -43,6 +62,6 @@ export const PaymentPeriodSwitch: React.FC<PaymentPeriodSwitchProps> = ({
       >
         연간 구독
       </label>
-    </div>
+    </fieldset>
   );
 };
