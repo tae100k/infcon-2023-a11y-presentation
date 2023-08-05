@@ -17,6 +17,7 @@ export const PaymentDropDown: React.FC<PaymentDropDownProps> = ({
 }) => {
   const [isExpanded, setIsExpanded] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
+  const [isButtonFocused, setIsButtonFocused] = useState(false);
 
   useEffect(() => {
     if (buttonRef.current) {
@@ -30,8 +31,14 @@ export const PaymentDropDown: React.FC<PaymentDropDownProps> = ({
     ? "icon-wrapper expanded"
     : "icon-wrapper";
 
+  const handleClickEvent = () => {
+    if (isButtonFocused) {
+      toggleDropdown();
+    }
+  };
+
   const handleKeyEvent = (event: React.KeyboardEvent<HTMLButtonElement>) => {
-    if (event.key === "Enter" || event.key === " ") {
+    if (isButtonFocused && (event.key === "Enter" || event.key === " ")) {
       toggleDropdown();
       event.preventDefault();
     }
@@ -53,10 +60,12 @@ export const PaymentDropDown: React.FC<PaymentDropDownProps> = ({
     <div className="dropdown">
       <button
         className="dropdown-button"
-        onClick={toggleDropdown}
         tabIndex={0}
         ref={buttonRef}
+        onClick={handleClickEvent}
         onKeyDown={handleKeyEvent}
+        onFocus={() => setIsButtonFocused(true)}
+        onBlur={() => setIsButtonFocused(false)}
         aria-label="Payment Dropdown"
         aria-haspopup="listbox"
         aria-expanded={isExpanded}
