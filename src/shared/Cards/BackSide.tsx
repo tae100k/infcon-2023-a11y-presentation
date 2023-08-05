@@ -16,6 +16,7 @@ export const BackSide: React.FC<BackSideProps> = ({card, index}) => {
       target={card.isExternal ? "_blank" : "_self"}
       rel={card.isExternal ? "noopener noreferrer" : ""}
       underline="none"
+      aria-label={`Go to ${card.badgeLabel} - ${card.hoverText}`}
     >
       <Box
         border="2px solid black"

@@ -1,5 +1,5 @@
 import {Box} from "@mui/material";
-import ContentsImage from "./ContentsImage/ContentsImage";
+import {ContentsImage} from "./ContentsImage/ContentsImage";
 import {SubscribeForm} from "./SubscribeForm/SubscribeForm";
 
 const Forms = () => {

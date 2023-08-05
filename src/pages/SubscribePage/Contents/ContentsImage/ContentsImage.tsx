@@ -1,10 +1,12 @@
 import {Box} from "@mui/material";
 
-const ContentsImage = () => {
+export const ContentsImage = () => {
+  const imagePath = "images/three-people.jpg";
+
   return (
     <Box
       component="img"
-      src="images/three-people.jpg"
+      src={imagePath}
       alt={"흰 표면에 누워있는 여성 세 명"}
       loading="lazy"
       sx={{
@@ -17,5 +19,3 @@ const ContentsImage = () => {
     />
   );
 };
-
-export default ContentsImage;

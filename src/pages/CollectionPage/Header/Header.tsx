@@ -4,6 +4,8 @@ import {WalkingModelsImage} from "assets/images";
 const Header = () => {
   return (
     <Box
+      role="banner"
+      aria-label="Header"
       sx={{
         display: "flex",
         padding: "163px 48px",
@@ -11,48 +13,64 @@ const Header = () => {
         justifyContent: "center",
         alignItems: "center",
         gap: "16px",
-        backgroundImage: `url(${WalkingModelsImage})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        backgroundRepeat: "no-repeat",
+        position: "relative",
       }}
     >
-      <Typography
-        variant="h1"
+      <img
+        src={WalkingModelsImage}
+        alt="Representation of a variety of métiers d’art professions"
+        style={{
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          objectFit: "cover",
+        }}
+      />
+      <Box
         sx={{
-          color: "white",
-          fontStyle: "normal",
-          fontSize: {
-            xs: "80px",
-            sm: "96px",
-            lg: "164px",
-          },
-          fontWeight: 700,
-          lineHeight: "normal",
-          letterSpacing: "2.46px",
-          textAlign: "center",
+          position: "relative",
+          zIndex: 1,
         }}
       >
-        Métiers d’art
-      </Typography>
-      <Typography
-        variant="h2"
-        sx={{
-          color: "white",
-          fontStyle: "normal",
-          fontSize: {
-            xs: "56px",
-            sm: "60px",
-            lg: "80px",
-          },
-          fontWeight: 700,
-          lineHeight: "normal",
-          letterSpacing: "2.46px",
-          textAlign: "center",
-        }}
-      >
-        Collection
-      </Typography>
+        <Typography
+          variant="h1"
+          sx={{
+            color: "white",
+            fontStyle: "normal",
+            fontSize: {
+              xs: "80px",
+              sm: "96px",
+              lg: "164px",
+            },
+            fontWeight: 700,
+            lineHeight: "normal",
+            letterSpacing: "2.46px",
+            textAlign: "center",
+          }}
+        >
+          Métiers d’art
+        </Typography>
+        <Typography
+          variant="h2"
+          sx={{
+            color: "white",
+            fontStyle: "normal",
+            fontSize: {
+              xs: "56px",
+              sm: "60px",
+              lg: "80px",
+            },
+            fontWeight: 700,
+            lineHeight: "normal",
+            letterSpacing: "2.46px",
+            textAlign: "center",
+          }}
+        >
+          Collection
+        </Typography>
+      </Box>
     </Box>
   );
 };

@@ -6,4 +6,5 @@ export interface CardItemDataType {
   badgeLabel: string;
   hoverText: string;
   hoverImageUrl: string;
+  alt?: string;
 }

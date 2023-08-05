@@ -34,9 +34,14 @@ const SubscribeForm = () => {
     setFormState({...formState, [name]: value});
   };
 
-  const handleChangePeriod = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value as "monthly" | "yearly";
+  const handleChangePeriod = (value: "monthly" | "yearly") => {
     setSelectedOption(value);
+  };
+
+  const handleSubmit = () => {
+    console.log("Form data:", formState);
+    console.log("Selected payment method index:", selectedItem);
+    console.log("Selected payment period:", selectedOption);
   };
 
   return (
@@ -71,49 +76,65 @@ const SubscribeForm = () => {
         </Box>
 
         <form className="form-container">
-          <InputBox id={"name"} placeholder={"이름"} />
-          <InputBox id={"email"} placeholder={"이메일"} />
-          <InputBox id={"number"} placeholder={"전화번호"} />
-          <InputBox id={"address"} placeholder={"도로명 주소"} />
-          <InputBox id={"detail address"} placeholder={"상세 주소"} />
-        </form>
-        <Box gap={"24px"} display="flex" flexDirection={"column"}>
-          <PaymentDropDown
-            options={paymentMethodOptions}
-            selectedItem={selectedItem}
-            onSelectItem={setSelectedItem}
+          <InputBox id={"name"} placeholder={"이름"} onChange={handleChange} />
+          <InputBox
+            id={"email"}
+            placeholder={"이메일"}
+            onChange={handleChange}
           />
-          <Box display={"flex"} justifyContent="space-between">
-            <Typography
-              sx={{
-                color: "#000",
-                textAlign: "center",
-                fontFamily: "Pretendard, sans-serif",
-                fontSize: "24px",
-                fontStyle: "normal",
-                fontWeight: 700,
-                lineHeight: "125%",
-              }}
-            >
-              결제 금액
-            </Typography>
-            <Typography
-              sx={{
-                color: "#000",
-                textAlign: "center",
-                fontFamily: "Pretendard, sans-serif",
-                fontSize: "24px",
-                fontStyle: "normal",
-                fontWeight: 700,
-                lineHeight: "125%",
-              }}
-            >
-              {selectedOption === "monthly" ? "7,900원" : "86,400원"}
-            </Typography>
+          <InputBox
+            id={"number"}
+            placeholder={"전화번호"}
+            onChange={handleChange}
+          />
+          <InputBox
+            id={"address"}
+            placeholder={"도로명 주소"}
+            onChange={handleChange}
+          />
+          <InputBox
+            id={"detail address"}
+            placeholder={"상세 주소"}
+            onChange={handleChange}
+          />
+          <Box gap={"24px"} display="flex" flexDirection={"column"}>
+            <PaymentDropDown
+              options={paymentMethodOptions}
+              selectedItem={selectedItem}
+              onSelectItem={setSelectedItem}
+            />
+            <Box display={"flex"} justifyContent="space-between">
+              <Typography
+                sx={{
+                  color: "#000",
+                  textAlign: "center",
+                  fontFamily: "Pretendard, sans-serif",
+                  fontSize: "24px",
+                  fontStyle: "normal",
+                  fontWeight: 700,
+                  lineHeight: "125%",
+                }}
+              >
+                결제 금액
+              </Typography>
+              <Typography
+                sx={{
+                  color: "#000",
+                  textAlign: "center",
+                  fontFamily: "Pretendard, sans-serif",
+                  fontSize: "24px",
+                  fontStyle: "normal",
+                  fontWeight: 700,
+                  lineHeight: "125%",
+                }}
+              >
+                {selectedOption === "monthly" ? "7,900원" : "86,400원"}
+              </Typography>
+            </Box>
+            <ConsentsCheckboxes />
+            <SubscribeSubmitButton onClick={handleSubmit} />
           </Box>
-          <ConsentsCheckboxes />
-          <SubscribeSubmitButton />
-        </Box>
+        </form>
       </Box>
     </Box>
   );
