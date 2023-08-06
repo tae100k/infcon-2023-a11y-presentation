@@ -1,6 +1,6 @@
 import {Box, Grid} from "@mui/material";
 import {carouselItems} from "constant/carousel";
-import {useEffect, useRef, useState} from "react";
+import {useCallback, useEffect, useRef, useState} from "react";
 import {getRotatedItems} from "service/carousel.service";
 import {CarouselItemCard} from "./CarouselItemCard";
 import {NavigationButton} from "./NavigationButton";
@@ -10,25 +10,26 @@ export const SelfRotatingSlider = () => {
   const [activeIndex, setActiveIndex] = useState(Math.floor(items.length / 2));
   const sliderTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  const moveRight = useCallback(() => {
+    setActiveIndex((prevIndex) => (prevIndex + 1) % items.length);
+  }, [items.length]);
+
+  const moveLeft = useCallback(() => {
+    setActiveIndex(
+      (prevIndex) => (prevIndex - 1 + items.length) % items.length
+    );
+  }, [items.length]);
+
   useEffect(() => {
     sliderTimeout.current = setInterval(() => {
       moveRight();
-    }, 2000);
+    }, 10000);
 
     return () => {
       if (sliderTimeout.current) clearInterval(sliderTimeout.current);
     };
-  }, [activeIndex]);
+  }, [activeIndex, moveRight]);
 
-  const moveRight = () => {
-    setActiveIndex((prevIndex) => (prevIndex + 1) % items.length);
-  };
-
-  const moveLeft = () => {
-    setActiveIndex(
-      (prevIndex) => (prevIndex - 1 + items.length) % items.length
-    );
-  };
   const handleKeyDown = (event: React.KeyboardEvent) => {
     if (event.key === "ArrowRight") {
       moveRight();
@@ -36,6 +37,7 @@ export const SelfRotatingSlider = () => {
       moveLeft();
     }
   };
+
   const rotatedItems = getRotatedItems(carouselItems, activeIndex);
 
   return (
@@ -52,7 +54,7 @@ export const SelfRotatingSlider = () => {
       <NavigationButton
         direction="left"
         onClick={moveLeft}
-        aria-label="Previous slide"
+        aria-label="이전 슬라이드로 이동"
       />
       <Box
         sx={{
@@ -92,7 +94,7 @@ export const SelfRotatingSlider = () => {
       <NavigationButton
         direction="right"
         onClick={moveRight}
-        aria-label="Next slide"
+        aria-label="이전 슬라이드로 이동"
       />
     </Box>
   );

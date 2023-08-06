@@ -26,8 +26,8 @@ export const PaymentPeriodSwitch: React.FC<PaymentPeriodSwitchProps> = ({
   return (
     <fieldset
       className="toggle-switch"
+      aria-label="구독 주기 토글"
       role="group"
-      aria-label="Subscription period"
       onKeyDown={handleKeyDown}
       tabIndex={0}
     >
@@ -38,7 +38,9 @@ export const PaymentPeriodSwitch: React.FC<PaymentPeriodSwitchProps> = ({
         value="monthly"
         checked={selectedOption === "monthly"}
         onChange={handlePeriodChange}
+        role="checkbox"
         aria-checked={selectedOption === "monthly"}
+        aria-live="polite"
       />
       <label
         htmlFor="monthly"
@@ -55,6 +57,8 @@ export const PaymentPeriodSwitch: React.FC<PaymentPeriodSwitchProps> = ({
         checked={selectedOption === "yearly"}
         onChange={handlePeriodChange}
         aria-checked={selectedOption === "yearly"}
+        role="checkbox"
+        aria-live="polite"
       />
       <label
         htmlFor="yearly"

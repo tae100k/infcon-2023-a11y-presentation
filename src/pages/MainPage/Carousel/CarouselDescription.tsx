@@ -26,8 +26,11 @@ export const CarouselDescription = () => {
         }}
       >
         <Typography
+          component="h2"
+          variant="h2"
           sx={{
             color: "#000",
+
             fontSize: {
               xs: "24px",
               sm: "30px",
@@ -44,6 +47,8 @@ export const CarouselDescription = () => {
           {"CHANEL 2022/23\n공방(Métiers d’art)컬렉션 미리보기"}
         </Typography>
         <Typography
+          component="h3"
+          variant="h3"
           sx={{
             color: "#8B8885",
             textAlign: "center",

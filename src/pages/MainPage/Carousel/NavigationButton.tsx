@@ -9,6 +9,7 @@ interface NavigationButtonProps {
 export const NavigationButton: React.FC<NavigationButtonProps> = ({
   direction,
   onClick,
+  ...props
 }) => (
   <IconButton
     onClick={onClick}
@@ -31,6 +32,7 @@ export const NavigationButton: React.FC<NavigationButtonProps> = ({
         sm: "flex",
       },
     }}
+    {...props}
   >
     {direction === "left" ? <ChevronLeft /> : <ChevronRight />}
   </IconButton>

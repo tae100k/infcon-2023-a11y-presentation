@@ -4,32 +4,34 @@ import {SubscribeForm} from "./SubscribeForm/SubscribeForm";
 
 const Forms = () => {
   return (
-    <Box
-      sx={{
-        display: "flex",
-        padding: {
-          xs: "32px 40px 32px 40px",
-          md: "32px 148px 32px 148px",
-          lg: "32px 74px 32px 0px",
-        },
-      }}
-    >
+    <main>
       <Box
-        display="flex"
-        gap={{
-          xs: "40px",
-          md: "48px",
-          lg: "80px",
-        }}
         sx={{
-          flexDirection: {xs: "column", lg: "row"},
-          width: "100%",
+          display: "flex",
+          padding: {
+            xs: "32px 40px 32px 40px",
+            md: "32px 148px 32px 148px",
+            lg: "32px 74px 32px 0px",
+          },
         }}
       >
-        <ContentsImage />
-        <SubscribeForm />
+        <Box
+          display="flex"
+          gap={{
+            xs: "40px",
+            md: "48px",
+            lg: "80px",
+          }}
+          sx={{
+            flexDirection: {xs: "column", lg: "row"},
+            width: "100%",
+          }}
+        >
+          <ContentsImage />
+          <SubscribeForm />
+        </Box>
       </Box>
-    </Box>
+    </main>
   );
 };
 export {Forms};
