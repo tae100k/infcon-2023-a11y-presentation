@@ -19,12 +19,6 @@ export const PaymentDropDown: React.FC<PaymentDropDownProps> = ({
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [isButtonFocused, setIsButtonFocused] = useState(false);
 
-  useEffect(() => {
-    if (buttonRef.current) {
-      buttonRef.current.focus();
-    }
-  }, []);
-
   const toggleDropdown = () => setIsExpanded(!isExpanded);
 
   const iconWrapperClass = isExpanded
