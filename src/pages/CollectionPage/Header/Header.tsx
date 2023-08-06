@@ -18,7 +18,7 @@ const Header = () => {
     >
       <img
         src={WalkingModelsImage}
-        alt="Representation of a variety of métiers d’art professions"
+        alt=" 공방 컬렉션"
         style={{
           position: "absolute",
           top: 0,

@@ -43,7 +43,7 @@ export const ArticleIntro = () => {
         >
           <img
             src={ArticleImage1}
-            alt="Fashion clothing displayed on a runway"
+            alt="까멜리아, 엮은 진주, 주얼 장식 버튼, 비즈와 자수 등 공방 장인들의 섬세한 솜씨는 다채로운 컬러와 하우스의 상징적 코드들과 버무려졌다."
             style={{
               objectFit: "cover",
               objectPosition: "top",
@@ -76,7 +76,7 @@ export const ArticleIntro = () => {
       >
         <img
           src={ArticleImage2}
-          alt="Elegant dress showcased on a runway"
+          alt="섬세한 장인정신이 느껴지는 가운데, 현대적인 스타일링이 돋보였던 룩"
           style={{
             objectFit: "cover",
             objectPosition: "top",
