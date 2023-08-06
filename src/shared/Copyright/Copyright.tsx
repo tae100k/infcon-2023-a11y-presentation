@@ -10,7 +10,7 @@ const Copyright = () => {
         py={"32px"}
         display="flex"
         justifyContent="center"
-        aria-label="Copyright information"
+        aria-label="홈페이지 저작권 정보"
       >
         <Typography
           component="h2"

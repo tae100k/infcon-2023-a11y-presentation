@@ -124,7 +124,7 @@ const SubscribeForm = () => {
               selectedItem={selectedItem}
               onSelectItem={setSelectedItem}
             />
-            <Box display={"flex"} justifyContent="space-between">
+            {/* <Box display={"flex"} justifyContent="space-between">
               <Typography
                 sx={{
                   color: "#000",
@@ -151,7 +151,7 @@ const SubscribeForm = () => {
               >
                 {selectedOption === "monthly" ? "7,900원" : "86,400원"}
               </Typography>
-            </Box>
+            </Box> */}
             <ConsentsCheckboxes />
             <SubscribeSubmitButton onClick={handleSubmit} />
           </Box>
