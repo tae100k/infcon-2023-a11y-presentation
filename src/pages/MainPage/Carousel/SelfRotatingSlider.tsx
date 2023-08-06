@@ -54,7 +54,7 @@ export const SelfRotatingSlider = () => {
       <NavigationButton
         direction="left"
         onClick={moveLeft}
-        aria-label="Naviate to Previous slide"
+        aria-label="이전 슬라이드로 이동"
       />
       <Box
         sx={{
@@ -94,7 +94,7 @@ export const SelfRotatingSlider = () => {
       <NavigationButton
         direction="right"
         onClick={moveRight}
-        aria-label="Naviate to Next slide"
+        aria-label="이전 슬라이드로 이동"
       />
     </Box>
   );
