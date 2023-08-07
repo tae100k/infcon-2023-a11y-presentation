@@ -111,7 +111,7 @@ const SubscribeForm = () => {
             autoComplete="street-address"
           />
           <InputBox
-            id="address"
+            id="detail-address"
             name="address"
             placeholder="상세 주소"
             onChange={handleChange}
