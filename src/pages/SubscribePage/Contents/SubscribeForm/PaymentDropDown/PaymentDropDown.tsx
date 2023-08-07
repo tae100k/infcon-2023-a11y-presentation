@@ -1,8 +1,8 @@
-import React, {useState, useRef, useEffect} from "react";
-import "./PaymentDropDown.css";
-import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
-import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import CheckIcon from "@mui/icons-material/Check";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import KeyboardArrowUpIcon from "@mui/icons-material/KeyboardArrowUp";
+import React, {useRef, useState} from "react";
+import "./PaymentDropDown.css";
 
 interface PaymentDropDownProps {
   options: string[];
@@ -60,7 +60,7 @@ export const PaymentDropDown: React.FC<PaymentDropDownProps> = ({
         onKeyDown={handleKeyEvent}
         onFocus={() => setIsButtonFocused(true)}
         onBlur={() => setIsButtonFocused(false)}
-        aria-label="Payment Dropdown"
+        aria-label="결제 방식 선택 토글"
         aria-haspopup="listbox"
         aria-expanded={isExpanded}
       >
