@@ -22,18 +22,10 @@
   cursor: pointer;
 }
 
-.toggle-option:first-child {
-  opacity: 0.4;
-}
-
-.toggle-option:last-child {
-  background: black;
-  border: 0.5px white solid;
-}
-
 .toggle-option-text {
   text-align: center;
   font-size: 16px;
+  opacity: 0.4;
   font-weight: 700;
   line-height: 18px;
   letter-spacing: 0.24px;
@@ -59,4 +51,11 @@
 
 .slider-text {
   color: white;
+  color: #fff;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px; /* 112.5% */
+  letter-spacing: 0.24px;
 }
