@@ -2,70 +2,46 @@ import React from "react";
 import "./PaymentPeriodSwitch.css";
 
 interface PaymentPeriodSwitchProps {
-  selectedOption: "monthly" | "yearly";
-  onChange: (value: "monthly" | "yearly") => void;
+  isAnnual: boolean;
+  onChange: () => void;
 }
 
 export const PaymentPeriodSwitch: React.FC<PaymentPeriodSwitchProps> = ({
-  selectedOption,
+  isAnnual,
   onChange,
 }) => {
-  const handlePeriodChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    onChange(event.target.value as "monthly" | "yearly");
-  };
-
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLElement>) => {
-    if (event.key === "ArrowLeft" && selectedOption === "yearly") {
-      onChange("monthly");
-    }
-    if (event.key === "ArrowRight" && selectedOption === "monthly") {
-      onChange("yearly");
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key === "Enter" || e.key === " ") {
+      onChange();
     }
   };
 
   return (
-    <fieldset
-      className="toggle-switch"
-      aria-label="구독 주기 토글"
-      role="group"
-      onKeyDown={handleKeyDown}
+    <div
+      className="toggle-container"
+      role="switch"
+      aria-checked={isAnnual}
+      aria-label={`Subscription type, ${
+        isAnnual ? "연간 구독" : "월간 구독"
+      } selected`}
       tabIndex={0}
+      onClick={onChange}
+      onKeyDown={handleKeyDown}
     >
-      <input
-        type="radio"
-        id="monthly"
-        name="subscription"
-        value="monthly"
-        checked={selectedOption === "monthly"}
-        onChange={handlePeriodChange}
-        role="checkbox"
-        aria-checked={selectedOption === "monthly"}
-        aria-live="polite"
-      />
-      <label
-        htmlFor="monthly"
-        className={`option ${selectedOption === "monthly" ? "selected" : ""}`}
+      <div className="toggle-option">
+        <span className="toggle-option-text">월간 구독</span>
+      </div>
+      <div className="toggle-option">
+        <span className="toggle-option-text">연간 구독</span>
+      </div>
+      <div
+        className="slider"
+        style={{transform: isAnnual ? "translateX(100%)" : "translateX(0)"}}
       >
-        월간 구독
-      </label>
-
-      <input
-        type="radio"
-        id="yearly"
-        name="subscription"
-        value="yearly"
-        checked={selectedOption === "yearly"}
-        onChange={handlePeriodChange}
-        aria-checked={selectedOption === "yearly"}
-        role="checkbox"
-        aria-live="polite"
-      />
-      <label
-        htmlFor="yearly"
-        className={`option ${selectedOption === "yearly" ? "selected" : ""}`}
-      >
-        연간 구독
-      </label>
-    </fieldset>
+        <span className="slider-text">
+          {isAnnual ? "연간 구독" : "월간 구독"}
+        </span>
+      </div>
+    </div>
   );
 };
