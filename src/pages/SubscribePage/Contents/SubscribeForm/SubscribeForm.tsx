@@ -25,23 +25,20 @@ const initialFormState: ContactForm = {
 const SubscribeForm = () => {
   const [formState, setFormState] = useState(initialFormState);
   const [selectedItem, setSelectedItem] = useState(0);
-  const [selectedOption, setSelectedOption] = useState<"monthly" | "yearly">(
-    "monthly"
-  );
+  const [isAnnual, setIsAnnual] = useState(false);
+  const handleChangePeriod = () => {
+    setIsAnnual(!isAnnual);
+  };
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const {name, value} = event.target;
     setFormState({...formState, [name]: value});
   };
 
-  const handleChangePeriod = (value: "monthly" | "yearly") => {
-    setSelectedOption(value);
-  };
-
   const handleSubmit = () => {
     console.log("Form data:", formState);
     console.log("Selected payment method index:", selectedItem);
-    console.log("Selected payment period:", selectedOption);
+    console.log("Selected payment period:", isAnnual);
   };
 
   return (
@@ -59,7 +56,7 @@ const SubscribeForm = () => {
           gap={2}
         >
           <PaymentPeriodSwitch
-            selectedOption={selectedOption}
+            isAnnual={isAnnual}
             onChange={handleChangePeriod}
           />
           <Typography
@@ -149,7 +146,7 @@ const SubscribeForm = () => {
                   lineHeight: "125%",
                 }}
               >
-                {selectedOption === "monthly" ? "7,900원" : "86,400원"}
+                {isAnnual ? "86,400원" : "7,900원"}
               </Typography>
             </Box>
             <ConsentsCheckboxes />
