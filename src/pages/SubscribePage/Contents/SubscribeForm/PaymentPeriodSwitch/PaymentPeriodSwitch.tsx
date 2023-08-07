@@ -12,6 +12,13 @@ export const PaymentPeriodSwitch: React.FC<PaymentPeriodSwitchProps> = ({
 }) => {
   const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
     if (e.key === "Enter" || e.key === " ") {
+      e.preventDefault();
+      onChange();
+    }
+  };
+
+  const handleClickOption = (selected: boolean) => {
+    if (!selected) {
       onChange();
     }
   };
@@ -25,13 +32,18 @@ export const PaymentPeriodSwitch: React.FC<PaymentPeriodSwitchProps> = ({
         isAnnual ? "연간 구독" : "월간 구독"
       } selected`}
       tabIndex={0}
-      onClick={onChange}
       onKeyDown={handleKeyDown}
     >
-      <div className="toggle-option">
+      <div
+        className="toggle-option"
+        onClick={() => handleClickOption(!isAnnual)}
+      >
         <span className="toggle-option-text">월간 구독</span>
       </div>
-      <div className="toggle-option">
+      <div
+        className="toggle-option"
+        onClick={() => handleClickOption(isAnnual)}
+      >
         <span className="toggle-option-text">연간 구독</span>
       </div>
       <div
