@@ -4,7 +4,6 @@ export const GalleryTitle = () => {
   return (
     <Box>
       <Typography
-        lang="ko"
         sx={{
           color: "#000",
           fontStyle: "normal",

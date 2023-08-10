@@ -13,7 +13,6 @@ export const ArticleIntro = () => {
           md: "row",
         },
       }}
-      role="presentation"
     >
       <Box
         sx={{
