@@ -1,15 +1,13 @@
 import {Button} from "@mui/material";
 
-interface SubscribeSubmitButtonProps {
-  onClick?: () => void;
-}
+interface SubscribeSubmitButtonProps {}
 
-export const SubscribeSubmitButton: React.FC<SubscribeSubmitButtonProps> = ({
-  onClick,
-}) => {
+export const SubscribeSubmitButton: React.FC<
+  SubscribeSubmitButtonProps
+> = () => {
   return (
     <Button
-      onClick={onClick}
+      type="submit"
       sx={{
         display: "flex",
         padding: "16px",

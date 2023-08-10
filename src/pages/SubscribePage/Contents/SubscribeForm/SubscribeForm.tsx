@@ -13,6 +13,7 @@ interface ContactForm {
   email: string;
   phone: string;
   address: string;
+  detailAddress: string;
 }
 
 const initialFormState: ContactForm = {
@@ -20,6 +21,7 @@ const initialFormState: ContactForm = {
   email: "",
   phone: "",
   address: "",
+  detailAddress: "",
 };
 
 const SubscribeForm = () => {
@@ -35,10 +37,12 @@ const SubscribeForm = () => {
     setFormState({...formState, [name]: value});
   };
 
-  const handleSubmit = () => {
-    console.log("Form data:", formState);
-    console.log("Selected payment method index:", selectedItem);
-    console.log("Selected payment period:", isAnnual);
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    alert("폼이 성공적으로 제출되었습니다.");
+    setFormState(initialFormState);
+    setSelectedItem(0);
+    setIsAnnual(false);
   };
 
   return (
@@ -66,13 +70,14 @@ const SubscribeForm = () => {
               fontSize: "14px",
               fontWeight: 700,
               letterSpacing: "0.21px",
+              whiteSpace: "pre-wrap",
             }}
           >
-            연간 구독으로 매월 10%를 아끼세요!
+            {isAnnual ? "연간 구독으로 매월 10%를 아끼세요!" : "\n"}
           </Typography>
         </Box>
 
-        <form className="form-container">
+        <form className="form-container" onSubmit={handleSubmit}>
           <InputBox
             id="name"
             name="name"
@@ -80,6 +85,7 @@ const SubscribeForm = () => {
             onChange={handleChange}
             required
             autoComplete="name"
+            value={formState.name}
           />
           <InputBox
             id="email"
@@ -89,6 +95,7 @@ const SubscribeForm = () => {
             onChange={handleChange}
             required
             autoComplete="email"
+            value={formState.email}
           />
           <InputBox
             id="phone"
@@ -98,21 +105,23 @@ const SubscribeForm = () => {
             onChange={handleChange}
             required
             autoComplete="tel"
+            value={formState.phone}
           />
           <InputBox
             id="address"
             name="address"
             placeholder="도로명 주소"
             onChange={handleChange}
-            required
             autoComplete="street-address"
+            value={formState.address}
           />
           <InputBox
             id="detail-address"
-            name="address"
+            name="detailAddress"
             placeholder="상세 주소"
             onChange={handleChange}
             autoComplete="street-address"
+            value={formState.detailAddress}
           />
 
           <Box gap={"24px"} display="flex" flexDirection={"column"}>
@@ -150,7 +159,7 @@ const SubscribeForm = () => {
               </Typography>
             </Box>
             <ConsentsCheckboxes />
-            <SubscribeSubmitButton onClick={handleSubmit} />
+            <SubscribeSubmitButton />
           </Box>
         </form>
       </Box>
