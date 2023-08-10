@@ -18,7 +18,7 @@ export const PaymentDropDown: React.FC<PaymentDropDownProps> = ({
   const [isExpanded, setIsExpanded] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const [isButtonFocused, setIsButtonFocused] = useState(false);
-
+  const selectedOptionLabel = `${options[selectedItem]} 결제 방식 선택`;
   const toggleDropdown = () => setIsExpanded(!isExpanded);
 
   const iconWrapperClass = isExpanded
@@ -60,7 +60,7 @@ export const PaymentDropDown: React.FC<PaymentDropDownProps> = ({
         onKeyDown={handleKeyEvent}
         onFocus={() => setIsButtonFocused(true)}
         onBlur={() => setIsButtonFocused(false)}
-        aria-label="결제 방식 선택 토글"
+        aria-label={selectedOptionLabel}
         aria-haspopup="listbox"
         aria-expanded={isExpanded}
       >
