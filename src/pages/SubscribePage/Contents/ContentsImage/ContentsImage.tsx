@@ -6,7 +6,8 @@ export const ContentsImage = () => {
     <Box
       component="img"
       src={HaleyLawrenceImage}
-      alt={"흰 표면에 누워있는 여성 세 명"}
+      alt={"image"}
+      // alt={"흰 표면에 누워있는 여성 세 명"}
       loading="lazy"
       sx={{
         width: "100%",
