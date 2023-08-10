@@ -14,7 +14,7 @@ export const CarouselItemCard: React.FC<CarouselItemCardProps> = ({
 }) => {
   return (
     <Grid
-      aria-roledescription="carouselitem"
+      // aria-roledescription="carouselitem"
       key={item.id}
       sx={{
         position: "relative",
@@ -28,7 +28,7 @@ export const CarouselItemCard: React.FC<CarouselItemCardProps> = ({
     >
       <img
         src={item.src}
-        alt={item.alt}
+        alt={item.alt ?? ""}
         style={{
           width: "100%",
           height: "100%",
