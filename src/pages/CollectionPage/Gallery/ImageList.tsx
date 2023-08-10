@@ -1,22 +1,21 @@
-import {ImageList, ImageListItem} from "@mui/material";
+import {ImageList, ImageListItem, useMediaQuery} from "@mui/material";
 import {galleryGridImages} from "constant/gallery";
 
 export const ImageLists = () => {
+  const isSmallViewport = useMediaQuery("(max-width:720px)");
+
   return (
     <ImageList
       variant="quilted"
-      cols={25}
-      rowHeight={100}
+      cols={isSmallViewport ? 1 : 25}
+      rowHeight={isSmallViewport ? "auto" : 100}
       gap={20}
-      sx={{
-        overflow: "visible",
-      }}
-      role="presentation"
+      sx={{overflow: "visible"}}
     >
       {galleryGridImages.map((item) => (
         <ImageListItem
           key={item.img}
-          cols={item.cols || 1}
+          cols={isSmallViewport ? 1 : item.cols || 1}
           rows={item.rows || 1}
         >
           <img
@@ -26,6 +25,7 @@ export const ImageLists = () => {
             style={{
               border: "2px solid var(--black, #000)",
               borderRadius: item.borderRadius,
+              objectPosition: isSmallViewport ? "top" : undefined,
             }}
           />
         </ImageListItem>
