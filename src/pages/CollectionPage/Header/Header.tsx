@@ -18,7 +18,7 @@ const Header = () => {
     >
       <img
         src={WalkingModelsImage}
-        alt="1970년대의 에너지와 영감을 느낄 수 있었던 샤넬의 다카르 공방 컬렉션"
+        alt="Image 1"
         style={{
           position: "absolute",
           top: 0,
