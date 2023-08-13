@@ -26,17 +26,15 @@ export const ArticleIntro = () => {
           sx={{
             borderRadius: {
               xs: "0px 24px 24px 0px",
-              sm: "0px 36px 36px 0px",
-              md: "0px 48px",
+              md: "0px 24px",
             },
             height: "100%",
             border: "1px solid var(--black, #000)",
             position: "relative",
             overflow: "hidden",
             paddingTop: {
-              xs: "50%",
-              sm: "40%",
-              md: "calc(546px * 2 / 3)",
+              xs: "100%",
+              md: "296px",
             },
           }}
         >
@@ -61,15 +59,14 @@ export const ArticleIntro = () => {
           flex: {xs: "none", sm: "none", md: "1"},
           borderRadius: {
             xs: "24px 0px 0px 24px",
-            sm: "36px 0px 0px 36px",
-            md: "48px 0px",
+            md: "24px 0px",
           },
           border: "1px solid var(--black, #000)",
           position: "relative",
           overflow: "hidden",
           paddingTop: {
             xs: "100%",
-            md: "546px",
+            md: "296px",
           },
         }}
       >
