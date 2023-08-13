@@ -94,7 +94,7 @@ export const SelfRotatingSlider = () => {
       {/* <NavigationButton
         direction="right"
         onClick={moveRight}
-        aria-label="이전 슬라이드로 이동"
+        aria-label="다음 슬라이드로 이동"
       /> */}
     </Box>
   );
