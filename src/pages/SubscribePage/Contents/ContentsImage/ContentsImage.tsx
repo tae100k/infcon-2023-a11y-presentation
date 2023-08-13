@@ -11,7 +11,7 @@ export const ContentsImage = () => {
       loading="lazy"
       sx={{
         width: "100%",
-        maxWidth: {lg: "669px"},
+        maxWidth: {lg: "581px"},
         borderRadius: {
           xs: "16px",
           lg: "0px 24px 24px 0px",
