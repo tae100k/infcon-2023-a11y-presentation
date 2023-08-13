@@ -19,7 +19,7 @@ export const CarouselItemCard: React.FC<CarouselItemCardProps> = ({
       sx={{
         position: "relative",
         ...getSizeValue(index),
-        borderRadius: "48px 0px",
+        borderRadius: "24px 0px",
         border: "1px solid #000",
         overflow: "hidden",
         transform: `scale(${getScaleValue(index)})`,
