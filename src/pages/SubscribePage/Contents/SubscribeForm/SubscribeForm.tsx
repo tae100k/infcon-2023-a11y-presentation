@@ -82,19 +82,19 @@ const SubscribeForm = () => {
           <InputBox
             id="name"
             placeholder="이름"
+            name="name"
             value={formState.name}
             onChange={handleChange}
             // type="text"
-            // name="name"
             // required
             // autoComplete="name"
           />
           <InputBox
             id="email"
             placeholder="이메일"
+            name="email"
             value={formState.email}
             onChange={handleChange}
-            // name="email"
             // type="email"
             // required
             // autoComplete="email"
@@ -102,9 +102,9 @@ const SubscribeForm = () => {
           <InputBox
             id="phone"
             placeholder="전화번호"
+            name="phone"
             value={formState.phone}
             onChange={handleChange}
-            // name="phone"
             // type="tel"
             // required
             // autoComplete="tel"
@@ -112,17 +112,17 @@ const SubscribeForm = () => {
           <InputBox
             id="address"
             placeholder="도로명 주소"
+            name="address"
             value={formState.address}
             onChange={handleChange}
-            // name="address"
             // autoComplete="street-address"
           />
           <InputBox
             id="detail-address"
             placeholder="상세 주소"
+            name="detailAddress"
             value={formState.detailAddress}
             onChange={handleChange}
-            // name="detailAddress"
             // autoComplete="street-address"
           />
 
