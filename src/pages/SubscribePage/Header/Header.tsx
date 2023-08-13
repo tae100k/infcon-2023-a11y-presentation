@@ -35,28 +35,6 @@ const Header = () => {
         >
           SUBSCRIBE
         </Typography>
-        <Button
-          component={RouterLink}
-          to="/"
-          variant="contained"
-          aria-label="메인 페이지로 이동"
-          sx={{
-            display: "flex",
-            padding: "16px 18px",
-            borderRadius: "9999px",
-            border: "1px solid var(--white, #FFF)",
-            background: "var(--black, #000)",
-            color: "var(--white, #FFF)",
-            textAlign: "center",
-            fontSize: "20px",
-            fontStyle: "normal",
-            fontWeight: 700,
-            alignSelf: "center",
-            width: "initial",
-          }}
-        >
-          Home
-        </Button>
       </Box>
     </header>
   );
