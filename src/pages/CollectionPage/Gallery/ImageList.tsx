@@ -20,7 +20,8 @@ export const ImageLists = () => {
         >
           <img
             {...srcset(item.img, 121, item.rows, item.cols)}
-            alt={item?.alt ?? ""}
+            tabIndex={0}
+            alt={item.alt}
             loading="lazy"
             style={{
               border: "2px solid var(--black, #000)",
