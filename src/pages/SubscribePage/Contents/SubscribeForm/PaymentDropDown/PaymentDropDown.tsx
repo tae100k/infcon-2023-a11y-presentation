@@ -25,10 +25,9 @@ export const PaymentDropDown: React.FC<PaymentDropDownProps> = ({
     ? "icon-wrapper expanded"
     : "icon-wrapper";
 
-  const handleClickEvent = () => {
-    if (isButtonFocused) {
-      toggleDropdown();
-    }
+  const handleClickEvent = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault();
+    toggleDropdown();
   };
 
   const handleKeyEvent = (event: React.KeyboardEvent<HTMLButtonElement>) => {
