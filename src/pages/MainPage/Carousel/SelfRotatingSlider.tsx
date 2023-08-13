@@ -23,7 +23,7 @@ export const SelfRotatingSlider = () => {
   useEffect(() => {
     sliderTimeout.current = setInterval(() => {
       moveRight();
-    }, 10000);
+    }, 300);
 
     return () => {
       if (sliderTimeout.current) clearInterval(sliderTimeout.current);
