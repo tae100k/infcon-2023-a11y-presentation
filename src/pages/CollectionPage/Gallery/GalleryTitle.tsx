@@ -31,7 +31,7 @@ export const GalleryTitle = () => {
             sm: "16px",
             md: "20px",
           },
-          marginTop: "4px",
+          marginTop: 2,
         }}
       >
         지난 6월 1일 일본 최대의 국제 전시장 도쿄 빅사이트에서는 샤넬의 다카르

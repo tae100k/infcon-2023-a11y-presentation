@@ -1,6 +1,6 @@
 import {Typography} from "@mui/material";
 
-export const DefaultTypography = () => (
+export const IntroductionText = () => (
   <Typography
     sx={{
       color: "var(--black, #000)",
@@ -22,18 +22,18 @@ export const DefaultTypography = () => (
   </Typography>
 );
 
-export const BoldTypography = () => (
+export const BodyText = () => (
   <Typography
     sx={{
       color: "var(--black, #000)",
       fontStyle: "normal",
-      fontWeight: 700,
-      lineHeight: "125%",
-      letterSpacing: "0.3px",
+      fontWeight: 400,
+      lineHeight: "150%",
+      letterSpacing: "0.24px",
       fontSize: {
         xs: "12px",
-        sm: "16px",
-        md: "20px",
+        sm: "14px",
+        md: "16px",
       },
     }}
   >
@@ -53,7 +53,7 @@ export const BoldTypography = () => (
   </Typography>
 );
 
-export const StyledTypography = () => (
+export const FooterText = () => (
   <Typography
     sx={{
       color: "#626262",

@@ -1,6 +1,5 @@
-import {Box} from "@mui/material";
+import {Box, Container} from "@mui/material";
 import {GalleryArticle} from "./GalleryArticle";
-import {GalleryTitle} from "./GalleryTitle";
 
 export const Gallery = () => {
   return (
@@ -8,7 +7,6 @@ export const Gallery = () => {
       sx={{
         display: "flex",
         flexDirection: "column",
-        alignItems: "flex-start",
         padding: {
           xs: "20px 16px",
           sm: "40px 32px",
@@ -19,8 +17,9 @@ export const Gallery = () => {
         },
       }}
     >
-      <GalleryTitle />
-      <GalleryArticle />
+      <Container maxWidth={"md"}>
+        <GalleryArticle />
+      </Container>
     </Box>
   );
 };

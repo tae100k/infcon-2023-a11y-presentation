@@ -33,9 +33,8 @@ export const ArticleIntro = () => {
             position: "relative",
             overflow: "hidden",
             paddingTop: {
-              xs: "50%",
-              sm: "40%",
-              md: "calc(546px * 2 / 3)",
+              xs: "100%",
+              md: "296px",
             },
           }}
         >
@@ -67,7 +66,7 @@ export const ArticleIntro = () => {
           overflow: "hidden",
           paddingTop: {
             xs: "100%",
-            md: "546px",
+            md: "296px",
           },
         }}
       >
