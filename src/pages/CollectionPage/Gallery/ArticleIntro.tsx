@@ -40,7 +40,8 @@ export const ArticleIntro = () => {
         >
           <img
             src={ArticleImage1}
-            alt="Left Image"
+            alt="줄지어 워킹하는 모델들"
+            tabIndex={0}
             style={{
               objectFit: "cover",
               objectPosition: "top",
@@ -72,7 +73,8 @@ export const ArticleIntro = () => {
       >
         <img
           src={ArticleImage2}
-          alt="Right Image"
+          alt="오른쪽 이미지"
+          tabIndex={0}
           style={{
             objectFit: "cover",
             objectPosition: "top",
