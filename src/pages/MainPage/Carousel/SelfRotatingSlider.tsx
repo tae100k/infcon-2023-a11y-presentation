@@ -23,7 +23,7 @@ export const SelfRotatingSlider = () => {
   useEffect(() => {
     sliderTimeout.current = setInterval(() => {
       moveRight();
-    }, 300);
+    }, 3000);
 
     return () => {
       if (sliderTimeout.current) clearInterval(sliderTimeout.current);
@@ -42,8 +42,8 @@ export const SelfRotatingSlider = () => {
 
   return (
     <Box
-      // tabIndex={0}
-      // onKeyDown={handleKeyDown}
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
       sx={{
         position: "relative",
         width: "100%",
@@ -51,11 +51,11 @@ export const SelfRotatingSlider = () => {
         pb: "120px",
       }}
     >
-      {/* <NavigationButton
+      <NavigationButton
         direction="left"
         onClick={moveLeft}
         aria-label="이전 슬라이드로 이동"
-      /> */}
+      />
       <Box
         sx={{
           width: "100%",
@@ -91,11 +91,11 @@ export const SelfRotatingSlider = () => {
           </Grid>
         </Box>
       </Box>
-      {/* <NavigationButton
+      <NavigationButton
         direction="right"
         onClick={moveRight}
         aria-label="이전 슬라이드로 이동"
-      /> */}
+      />
     </Box>
   );
 };
