@@ -28,7 +28,6 @@ const SubscribeForm = () => {
   const [formState, setFormState] = useState(initialFormState);
   const [selectedItem, setSelectedItem] = useState(0);
   const [isAnnual, setIsAnnual] = useState(false);
-
   const handleChangePeriod = () => {
     setIsAnnual(!isAnnual);
   };
@@ -81,49 +80,48 @@ const SubscribeForm = () => {
         <form className="form-container" onSubmit={handleSubmit}>
           <InputBox
             id="name"
+            name="name"
             placeholder="이름"
-            value={formState.name}
             onChange={handleChange}
-            // type="text"
-            // name="name"
-            // required
-            // autoComplete="name"
+            required
+            autoComplete="name"
+            value={formState.name}
           />
           <InputBox
             id="email"
+            name="email"
+            type="email"
             placeholder="이메일"
-            value={formState.email}
             onChange={handleChange}
-            // name="email"
-            // type="email"
-            // required
-            // autoComplete="email"
+            required
+            autoComplete="email"
+            value={formState.email}
           />
           <InputBox
             id="phone"
+            name="phone"
+            type="tel"
             placeholder="전화번호"
-            value={formState.phone}
             onChange={handleChange}
-            // name="phone"
-            // type="tel"
-            // required
-            // autoComplete="tel"
+            required
+            autoComplete="tel"
+            value={formState.phone}
           />
           <InputBox
             id="address"
+            name="address"
             placeholder="도로명 주소"
-            value={formState.address}
             onChange={handleChange}
-            // name="address"
-            // autoComplete="street-address"
+            autoComplete="street-address"
+            value={formState.address}
           />
           <InputBox
             id="detail-address"
+            name="detailAddress"
             placeholder="상세 주소"
-            value={formState.detailAddress}
             onChange={handleChange}
-            // name="detailAddress"
-            // autoComplete="street-address"
+            autoComplete="street-address"
+            value={formState.detailAddress}
           />
 
           <Box gap={"24px"} display="flex" flexDirection={"column"}>

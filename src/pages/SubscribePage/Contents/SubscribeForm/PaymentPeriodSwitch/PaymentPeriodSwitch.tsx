@@ -26,13 +26,13 @@ export const PaymentPeriodSwitch: React.FC<PaymentPeriodSwitchProps> = ({
   return (
     <div
       className="toggle-container"
-      // role="switch"
-      // aria-checked={isAnnual}
-      // aria-label={`Subscription type, ${
-      //   isAnnual ? "연간 구독" : "월간 구독"
-      // } selected`}
-      // tabIndex={0}
-      // onKeyDown={handleKeyDown}
+      role="switch"
+      aria-checked={isAnnual}
+      aria-label={`Subscription type, ${
+        isAnnual ? "연간 구독" : "월간 구독"
+      } selected`}
+      tabIndex={0}
+      onKeyDown={handleKeyDown}
     >
       <div
         className="toggle-option"
