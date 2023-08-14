@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import { WalkingModelsImage } from "assets/images";
 
-const Header = () => {
+const WrongHeader = () => {
   return (
     // <header>
     <Box
@@ -14,20 +14,11 @@ const Header = () => {
         alignItems: "center",
         gap: "16px",
         position: "relative",
+        backgroundImage: `url(${WalkingModelsImage})`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
       }}
     >
-      <img
-        src={WalkingModelsImage}
-        alt="Image 1"
-        style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
-        }}
-      />
       <Box
         sx={{
           position: "relative",
@@ -75,4 +66,4 @@ const Header = () => {
     // </header>
   );
 };
-export { Header };
+export { WrongHeader };
