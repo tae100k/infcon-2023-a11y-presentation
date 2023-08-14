@@ -61,29 +61,23 @@ yarn
 
 ## 프로젝트 시작 방법
 
-1. 이 저장소를 ***포크(Fork)*** 하세요: [Fork on GitHub](https://github.com/tae100k/infcon-2023-a11y-presentation/fork)
-   
-   차후 풀 리퀘스트를 생성하는 것이 가능하도록 자신의 깃허브 계정의 원격 저장소에 프로젝트가 복사됩니다.
-
-
-2. CLI(명령 줄 인터페이스)를 사용하여 로컬에 복제(Clone)하려면, 아래의 명령어들을 따라 수행하세요:
- 
-- 프로젝트를 로컬 컴퓨터로 복제 (*여기서 'YourGitHubUsername'을 본인의 실제 깃허브 사용자명으로 바꿔주세요.*)
+1.  프로젝트를 로컬 컴퓨터로 복제
 ```
-git clone https://github.com/YourGitHubUsername/infcon-2023-a11y-presentation.git 
+git clone https://github.com/tae100k/infcon-2023-a11y-presentation.git
 ```
-- 복제된 프로젝트 디렉토리로 이동
+2. 복제된 프로젝트 디렉토리로 이동
 ```
 cd infcon-2023-a11y-presentation
 ```
-- `hands-on-session-version` 브랜치로 전환
+3. `hands-on-session-version` 브랜치로 전환
 ```
 git checkout hands-on-session-version
 ```
-- `localhost:3000` 에 브라우저 띄우기
+4. `localhost:3000` 에 브라우저 띄우기
 ```
 yarn start
 ```
+
 <br />
 - 핸즈온 세션을 진행하며 코드를 자유롭게 수정해 보세요. 진행 사항을 저장하고 싶다면 커밋 및 푸시하세요. 포크한 저장소라면 아무런 제약 없이 자유롭게 변경 사항을 원격 저장소에 푸시할 수 있습니다.
 
