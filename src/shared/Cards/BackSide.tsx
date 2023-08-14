@@ -1,7 +1,7 @@
+import React from "react";
 import {Button, Link, Typography} from "@mui/material";
 import Box from "@mui/material/Box";
 import {ArrowTopRightIcon} from "assets/icons/icon";
-import React from "react";
 import {CardItemDataType} from "types/card";
 
 interface BackSideProps {
@@ -30,12 +30,20 @@ export const BackSide: React.FC<BackSideProps> = ({card, index}) => {
           aspectRatio: 1 / 1,
           backgroundColor: "inherit",
           transition: "background-color 0.3s",
-          backgroundImage: `url(${card.hoverImageUrl})`,
+          backgroundImage: `linear-gradient(0deg, rgba(0, 0, 0, 0.40) 0%, rgba(0, 0, 0, 0.40) 100%), url(${card.hoverImageUrl})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
+          position: "relative",
         }}
       >
-        <Box display={"flex"} flexDirection="column" gap={2}>
+        <Box
+          display={"flex"}
+          flexDirection="column"
+          gap={2}
+          sx={{
+            backgroundColor: "rgba(0, 0, 0, 0.0)",
+          }}
+        >
           <Box
             component="span"
             sx={{
@@ -63,7 +71,7 @@ export const BackSide: React.FC<BackSideProps> = ({card, index}) => {
             whiteSpace={"pre-wrap"}
             textAlign={"start"}
             sx={{
-              color: "#FFF",
+              color: "white",
               fontSize: {xs: "16px", sm: "18px", lg: "20px"},
               fontStyle: "normal",
               fontWeight: 700,
