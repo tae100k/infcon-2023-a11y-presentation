@@ -1,5 +1,6 @@
 import {Box, Typography} from "@mui/material";
-import {PenIcon} from "assets/icons/icon";
+import {TornadoIcon} from "assets/icons/icon";
+import {ReactComponent as PenIcon} from "assets/icons/pen.svg";
 
 export const IntroductionText = () => (
   <Typography
@@ -51,13 +52,9 @@ export const BodyText = () => (
 );
 
 export const FooterText = () => (
-  <Box display="flex" alignItems={"center"}>
+  <Box display="flex" alignItems={"center"} gap={0.5}>
     <PenIcon
-      sx={{
-        width: 20,
-        height: 20,
-        marginRight: 0.5,
-      }}
+    // aria-hidden="true"
     />
     <Typography
       sx={{
