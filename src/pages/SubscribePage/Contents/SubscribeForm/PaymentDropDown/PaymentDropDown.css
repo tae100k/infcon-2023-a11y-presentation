@@ -49,9 +49,9 @@
   cursor: pointer;
 }
 
-/* .dropdown-item:hover {
+.dropdown-item:hover {
   background-color: #cfcbc8;
-} */
+}
 
 .dropdown-item.selected {
   background-color: black;

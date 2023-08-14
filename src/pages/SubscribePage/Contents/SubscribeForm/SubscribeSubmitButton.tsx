@@ -26,12 +26,8 @@ export const SubscribeSubmitButton: React.FC<
         lineHeight: "125%",
         textAlign: "center",
         transition: "background 0.3s, border-color 0.3s, color 0.3s",
-        // "&:hover": {
-        //   color: "var(--black, #000)",
-        // },
         "&:hover": {
-          border: "2px solid var(--black, #000)",
-          background: "var(--background,  #000)",
+          color: "var(--black, #000)",
         },
       }}
     >
