@@ -58,6 +58,8 @@ export const FooterText = () => (
         height: 20,
         marginRight: 0.5,
       }}
+      tabIndex={0}
+      aria-hidden="true"
     />
     <Typography
       sx={{

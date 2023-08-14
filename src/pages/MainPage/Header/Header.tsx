@@ -39,7 +39,7 @@ const Header = () => {
           component={RouterLink}
           to="/subscribe"
           variant="contained"
-          // aria-label="정기 구독 신청 페이지로 이동"
+          aria-label="정기 구독 신청 페이지로 이동"
           sx={{
             display: "flex",
             padding: "16px 18px",
