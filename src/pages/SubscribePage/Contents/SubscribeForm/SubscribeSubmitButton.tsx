@@ -1,3 +1,4 @@
+import React from "react";
 import {Button} from "@mui/material";
 
 interface SubscribeSubmitButtonProps {}
@@ -10,6 +11,7 @@ export const SubscribeSubmitButton: React.FC<
       type="submit"
       sx={{
         display: "flex",
+        width: "full",
         padding: "16px",
         justifyContent: "center",
         alignItems: "center",
@@ -18,24 +20,22 @@ export const SubscribeSubmitButton: React.FC<
         border: "1px solid #000",
         background: "#000",
         color: "white",
+        fontSize: "16px",
+        fontStyle: "normal",
+        fontWeight: 700,
+        lineHeight: "125%",
+        textAlign: "center",
+        transition: "background 0.3s, border-color 0.3s, color 0.3s",
+        // "&:hover": {
+        //   color: "var(--black, #000)",
+        // },
         "&:hover": {
-          background: "#000",
-          borderColor: "#000",
-          opacity: 0.8,
+          border: "2px solid var(--black, #000)",
+          background: "var(--background,  #000)",
         },
       }}
     >
-      <span
-        style={{
-          textAlign: "center",
-          fontSize: "16px",
-          fontStyle: "normal",
-          fontWeight: "700",
-          lineHeight: "125%",
-        }}
-      >
-        구독 신청
-      </span>
+      구독 신청
     </Button>
   );
 };
