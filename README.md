@@ -1,3 +1,16 @@
+# 인프콘 2023 웹 접근성 핸즈온 실습 레포지토리
+
+## 목차
+
+- [소개](#소개)
+- [실습 내용](#실습-내용)
+- [개발 도구 설치 및 프로젝트 시작 방법](#개발-도구-설치-및-프로젝트-시작-방법)
+- [기술 스택](#기술-스택)
+- [팀원 소개](#팀원-소개)
+- [라이센스](#라이센스)
+- [이 프로젝트에 기여하는 방법: 오픈 소스 참여하기](#이-프로젝트에-기여하는-방법)
+- [기타 정보](#기타-정보)
+
 ## 소개
 
 해당 레포지토리는 2023년 8월 15일 인프콘에서 발표될 핸즈온 실습 자료입니다.<br/>
@@ -32,20 +45,48 @@
   <br/> 
   <br/>
 
+## 개발 도구 설치 및 프로젝트 시작 방법
+
+1. [Visual Studio Code](https://code.visualstudio.com/): 무료 오픈소스 코드 편집기
+2. [Git](https://git-scm.com/): 소스 코드 버전 관리 도구
+3. [Node.js](https://nodejs.org) (LTS 버전 권장) 및 npm: JavaScript 런타임 및 패키지 관리자
+4. [Yarn](https://yarnpkg.com/): 패키지 관리 도구
+```
+npm install -g yarn
+```
+5. 프로젝트 종속성 설치
+```
+yarn
+```
+
 ## 프로젝트 시작 방법
 
-1. 프로젝트를 로컬 환경으로 클론하고, 필요한 패키지를 설치합니다.
+1. 이 저장소를 ***포크(Fork)*** 하세요: [Fork on GitHub](https://github.com/tae100k/infcon-2023-a11y-presentation/fork)
+   
+   차후 풀 리퀘스트를 생성하는 것이 가능하도록 자신의 깃허브 계정의 원격 저장소에 프로젝트가 복사됩니다.
 
+
+2. CLI(명령 줄 인터페이스)를 사용하여 로컬에 복제(Clone)하려면, 아래의 명령어들을 따라 수행하세요:
+ 
+- 프로젝트를 로컬 컴퓨터로 복제 (*여기서 'YourGitHubUsername'을 본인의 실제 깃허브 사용자명으로 바꿔주세요.*)
 ```
-git clone tae100k/infcon-2023-a11y-presentation
-yarn install
+git clone https://github.com/YourGitHubUsername/infcon-2023-a11y-presentation.git 
 ```
-
-2. `yarn start` 명령어를 실행하여 프로젝트를 시작합니다.
-
+- 복제된 프로젝트 디렉토리로 이동
+```
+cd infcon-2023-a11y-presentation
+```
+- `hands-on-session-version` 브랜치로 전환
+```
+git checkout hands-on-session-version
+```
+- `localhost:3000` 에 브라우저 띄우기
 ```
 yarn start
 ```
+<br />
+- 핸즈온 세션을 진행하며 코드를 자유롭게 수정해 보세요. 진행 사항을 저장하고 싶다면 커밋 및 푸시하세요. 포크한 저장소라면 아무런 제약 없이 자유롭게 변경 사항을 원격 저장소에 푸시할 수 있습니다.
+
 
 <br/> 
 <br/>
@@ -107,7 +148,7 @@ yarn start
 <br/> 
 <br/>
 
-## 이 프로젝트에 기여하는 방법 (오픈소스 프로젝트에 참여하는 방법 소개)
+## 이 프로젝트에 기여하는 방법
 
 프로젝트에 기여하고 싶다면, 다음과 같은 절차를 따르시면 됩니다.
 
@@ -116,3 +157,10 @@ yarn start
 3. 새로운 브랜치를 생성하고, 변경 사항을 커밋(Commit)하세요.
 4. 변경 사항을 가진 브랜치를 자신의 포크한 원격 프로젝트로 푸시(Push)합니다.
 5. 원래 프로젝트로 풀 리퀘스트(Pull Request)를 생성하세요.
+
+<br/> 
+<br/>
+
+## 기타 정보
+
+이 저장소에 대한 질문이나 피드백이 있다면 [이슈 페이지](https://github.com/tae100k/infcon-2023-a11y-presentation/issues)에 글을 남겨 주세요.
