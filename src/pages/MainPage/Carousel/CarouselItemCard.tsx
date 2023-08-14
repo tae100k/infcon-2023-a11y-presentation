@@ -1,6 +1,6 @@
 import {Grid} from "@mui/material";
 import React from "react";
-import {getScaleValue, getSizeValue} from "service/carousel.service";
+import {getSizeValue} from "service/carousel.service";
 import {CarouselItemType} from "types/carousel";
 
 interface CarouselItemCardProps {
@@ -17,13 +17,12 @@ export const CarouselItemCard: React.FC<CarouselItemCardProps> = ({
       // aria-roledescription="carouselitem"
       key={item.id}
       sx={{
-        position: "relative",
         ...getSizeValue(index),
+        position: "relative",
         borderRadius: "24px 0px",
         border: "1px solid #000",
         overflow: "hidden",
-        transform: `scale(${getScaleValue(index)})`,
-        transition: "transform 0.5s, zIndex 0.5s",
+        transition: "transform 0.5s, z-index 0.5s",
       }}
     >
       <img
