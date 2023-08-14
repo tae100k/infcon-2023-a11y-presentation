@@ -1,4 +1,5 @@
-import {Typography} from "@mui/material";
+import {Box, Typography} from "@mui/material";
+import {PenIcon} from "assets/icons/icon";
 
 export const IntroductionText = () => (
   <Typography
@@ -50,20 +51,29 @@ export const BodyText = () => (
 );
 
 export const FooterText = () => (
-  <Typography
-    sx={{
-      color: "#626262",
-      fontStyle: "normal",
-      fontWeight: 400,
-      lineHeight: "125%",
-      letterSpacing: "0.21px",
-      fontSize: {
-        xs: "10px",
-        sm: "12px",
-        md: "14px",
-      },
-    }}
-  >
-    에디터 김신
-  </Typography>
+  <Box display="flex" alignItems={"center"}>
+    <PenIcon
+      sx={{
+        width: 20,
+        height: 20,
+        marginRight: 0.5,
+      }}
+    />
+    <Typography
+      sx={{
+        color: "#626262",
+        fontStyle: "normal",
+        fontWeight: 400,
+        lineHeight: "125%",
+        letterSpacing: "0.21px",
+        fontSize: {
+          xs: "10px",
+          sm: "12px",
+          md: "14px",
+        },
+      }}
+    >
+      에디터 김신
+    </Typography>
+  </Box>
 );

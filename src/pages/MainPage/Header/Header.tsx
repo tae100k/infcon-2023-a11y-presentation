@@ -53,6 +53,11 @@ const Header = () => {
           fontWeight: 700,
           alignSelf: "center",
           width: "initial",
+          // "&:hover": {
+          //   color: "black",
+          //   background: "var(--background, #E7E2DF)",
+          //   border: "1px solid var(--black, #000)",
+          // },
         }}
       >
         정기 구독 신청
