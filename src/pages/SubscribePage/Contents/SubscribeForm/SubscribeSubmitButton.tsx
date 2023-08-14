@@ -27,10 +27,12 @@ export const SubscribeSubmitButton: React.FC<
         textAlign: "center",
         transition: "background 0.3s, border-color 0.3s, color 0.3s",
         // "&:hover": {
-        //   background: "#E7E2DF",
-        //   borderColor: "var(--black, #000)",
         //   color: "var(--black, #000)",
         // },
+        "&:hover": {
+          border: "2px solid var(--black, #000)",
+          background: "var(--background,  #000)",
+        },
       }}
     >
       구독 신청
