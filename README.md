@@ -128,7 +128,7 @@ yarn start
 - 현) LOVO 인공지능 음성합성 기술 tool Genny 개발
 - NFT Auction 프로젝트 voice mask 개발
 - LOVO 자사 홈페이지 개발 등
-- 2020년부터 총 8개의 웹/앱서비스 출시 (side project)
+
 
 **소셜 미디어:** [LinkedIn](https://www.linkedin.com/mynetwork/)
 
