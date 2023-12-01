@@ -1,4 +1,180 @@
+## Select Language
+- [English](#infcon-2023-web-accessibility-hands-on-practice-repository)
+- [Korean](#인프콘-2023-웹-접근성-핸즈온-실습-레포지토리)
+
+# InfCon 2023 Web Accessibility Hands-on Practice Repository
+<details open>
+<summary>Click to collapse/expand English version</summary>
+
+
+## Table of Contents
+
+- [Introduction](#introduction)
+- [Practice Content](#practice-content)
+- [Development Tools Installation and Project Start Method](#development-tools-installation-and-project-start-method)
+- [Tech Stack](#tech-stack)
+- [Team Introduction](#team-introduction)
+- [License](#license)
+- [How to Contribute to this Project: Participate in Open Source](#how-to-contribute-to-this-project)
+- [Other Information](#other-information)
+
+## Introduction
+
+This repository contains hands-on practice materials to be presented at InfCon on August 15, 2023.<br/>
+We will find areas for improving web accessibility by reading an already completed website with a screen reader, and <br/>
+We will improve them together.
+
+<br/>
+
+## Practice Content
+
+- ### 2-1. Creating a subscription form that even visually impaired people can easily understand
+  - We will conduct a practice to enhance the web accessibility of the subscription form below.
+  <div align="center">
+  <img width="600" alt="Screenshot 2023-07-27 at 1 26 22 AM" src="https://github.com/tae100k/infcon-2023-a11y-presentation/assets/78027252/02bfe41e-945b-43c4-a2b9-97e188db1262">
+  </div>
+
+<br/>
+
+- ### 2-2. Alt text, all you need to know!
+  - We will conduct a practice to enhance the web accessibility of the images below.
+  <div align="center">
+  <img width="600" alt="Screenshot 2023-07-27 at 1 26 51 AM" src="https://github.com/tae100k/infcon-2023-a11y-presentation/assets/78027252/ef79d031-1818-479d-8b1e-f53bb5eea92a">
+  </div>
+
+<br/>
+
+- ### 2-3. Making a carousel that's different by a hair's breadth
+  - We will conduct a practice to enhance the web accessibility of the slider below.
+  <div align="center">
+   <img width="600" alt="Screenshot 2023-07-27 at 1 26 10 AM" src="https://github.com/tae100k/infcon-2023-a11y-presentation/assets/78027252/35e9cba5-7df5-4695-8541-60c7a3de21a5">
+  </div>
+  <br/> 
+  <br/>
+
+## Development Tools Installation and Project Start Method
+
+1. [Visual Studio Code](https://code.visualstudio.com/): Free open source code editor
+2. [Git](https://git-scm.com/): Source code version control tool
+3. [Node.js](https://nodejs.org) (LTS version recommended) and npm: JavaScript runtime and package manager
+4. [Yarn](https://yarnpkg.com/): Package management tool
+```
+npm install -g yarn
+```
+5. Install project dependencies
+```
+yarn
+```
+
+## How to Start the Project
+
+1.  Clone the project to your local computer
+```
+git clone https://github.com/tae100k/infcon-2023-a11y-presentation.git
+```
+2. Move to the cloned project directory
+```
+cd infcon-2023-a11y-presentation
+```
+3. Switch to the `hands-on-session-version` branch
+```
+git checkout hands-on-session-version
+```
+4. Open the browser at `localhost:3000`
+```
+yarn start
+```
+
+<br />
+- Feel free to modify the code as you conduct the hands-on session. If you want to save your progress, commit and push. If it's a forked repository, you can freely push changes to the remote repository without any restrictions.
+
+<br/> 
+<br/>
+
+## Tech Stack
+
+- Stack needed for the practice
+  - Knowing React, HTML, CSS will be helpful.
+- Stack used in the project
+  - React
+  - HTML, CSS
+  - MUI (Material-UI): It is not used in the practice. However, there are codes written in MUI in the project, so knowing it will be helpful.
+
+<br/> 
+<br/>
+
+## Team Introduction
+
+<table>
+  <tr>
+    <td style="width: 20%; text-align: center; padding: 0 3px;"><img src="https://github.com/tae100k/infcon-2023-a11y-presentation/assets/78027252/064f7fb9-297a-495b-9930-67df4dc67042" width="60%" /><br><strong>Jina Lee (Design)</strong></td>
+    <td style="width: 20%; text-align: center; padding: 0 3px;"><img src="https://github.com/tae100k/infcon-2023-a11y-presentation/assets/78027252/bc5634b8-8efe-4ace-b476-c6edc2df93d2" width="60%" /><br><strong>Taehee Kim (Development)</strong></td>
+  </tr>
+</table>
+
+### Jina Lee
+
+**UI/UX Designer (4 years experience)**
+
+#### Career
+
+- LOVO - Genny Planning and Design
+- Planning and production of global dance platform 5six7eight
+- Planned and designed the website of '1M HomeDance'
+- Planned and designed responsive website of '1M Workshop'
+
+**Social Media:** [LinkedIn](https://www.linkedin.com/in/ginalee-uxdesign/)
+
+### Taehee Kim
+
+**Front-end Developer (2 years experience)**
+
+#### Projects
+
+- Current) Development of LOVO AI voice synthesis technology tool Genny
+- Development of voice mask for NFT Auction project
+- Development of LOVO's own website, etc.
+
+**Social Media:** [LinkedIn](https://www.linkedin.com/mynetwork/)
+
+<br/> 
+<br/>
+
+## License
+
+This project is distributed under the MIT license.
+
+<br/> 
+<br/>
+
+## How to Contribute to this Project
+
+If you want to contribute to the project, follow these steps:
+
+1. First, fork the project to your own GitHub account.
+2. Clone the forked project to your local development environment.
+3. Create a new branch and commit your changes.
+4. Push the branch with the changes to your forked remote project.
+5. Create a pull request to the original project.
+
+<br/> 
+<br/>
+
+## Other Information
+
+If you have any questions or feedback about this repository, please leave a post on the [issue page](https://github.com/tae100k/infcon-2023-a11y-presentation/issues).
+
+
+
+
+</details>
+
 # 인프콘 2023 웹 접근성 핸즈온 실습 레포지토리
+<details>
+<summary>한국어 버전을 펼치려면 클릭하세요</summary>
+
+
+
 
 ## 목차
 
@@ -158,3 +334,11 @@ yarn start
 ## 기타 정보
 
 이 저장소에 대한 질문이나 피드백이 있다면 [이슈 페이지](https://github.com/tae100k/infcon-2023-a11y-presentation/issues)에 글을 남겨 주세요.
+
+
+</details>
+
+
+
+
+
