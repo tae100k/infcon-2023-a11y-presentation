@@ -1,23 +1,4 @@
-# InfCon 2023 Web Accessibility Hands-on Practice Repository
- 
-## Table of Contents
- 
-- [Introduction](#introduction)
-- [How the Session Works](#how-the-session-works)
-- [Practice Content](#practice-content)
-- [Development Tools Installation and Project Start Method](#development-tools-installation-and-project-start-method)
-- [Tech Stack](#tech-stack)
-- [Team Introduction](#team-introduction)
-- [License](#license)
-- [How to Contribute to this Project](#how-to-contribute-to-this-project)
-- [Other Information](#other-information)
-## Introduction
- 
-This repository contains hands-on practice materials presented at InfCon on August 15, 2023. We read an already completed website with a screen reader to find areas where accessibility breaks down, and we improve them together.
- 
-Live demo: https://infcon-2023.vercel.app
- 
-## How the Session Works
+# InfCon Web Accessibility Hands-on Practice Repository
  
 Most accessibility talks hand you a checklist. You nod along, you go home, and nothing changes.
  
@@ -28,6 +9,7 @@ Every exercise follows the same three steps:
 1. Hit the barrier yourself
 2. Talk about what went wrong
 3. Fix the code
+
 ## Practice Content
  
 ### 2-1. Creating a subscription form that even visually impaired people can easily understand
